@@ -55,7 +55,7 @@ export function App() {
 
       <Navbar isDemoMode={isDemoMode} onToggleDemoMode={setIsDemoMode} />
 
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-14 space-y-8">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-7">
         <HeroHeader />
 
         <QuickScenarioChips onSelectScenario={handleSelectScenario} />
