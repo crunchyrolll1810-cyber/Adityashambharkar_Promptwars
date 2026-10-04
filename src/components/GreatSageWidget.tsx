@@ -65,7 +65,7 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
     return (
       <div
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-5 right-5 z-50 flex items-center gap-3 px-3.5 py-2.5 rounded-full backdrop-blur-2xl bg-[#161922]/95 border border-purple-500/40 hover:border-purple-400 shadow-2xl hover:shadow-purple-500/25 active:scale-[0.98] transition-all cursor-pointer group"
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-3 px-4 py-3 rounded-full backdrop-blur-2xl bg-[#161922]/95 border border-purple-500/40 hover:border-purple-400 shadow-2xl hover:shadow-purple-500/25 active:scale-[0.97] transition-all cursor-pointer group"
       >
         <div className="relative flex items-center justify-center h-8 w-8 rounded-full bg-purple-600/30 border border-purple-400/40 text-base shadow-inner">
           <span>🔮</span>
@@ -75,10 +75,10 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
           </span>
         </div>
         <div className="max-w-[240px] hidden sm:block text-left">
-          <span className="block text-[11px] font-bold text-white group-hover:text-purple-300 transition">Great Sage • Online</span>
+          <span className="block text-xs font-bold text-white group-hover:text-purple-300 transition">Great Sage • Online</span>
           <p className="text-[11px] text-slate-300 truncate">{hookQuote}</p>
         </div>
-        <span className="text-[11px] px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-200 border border-purple-500/30 font-medium">Talk</span>
+        <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-200 border border-purple-500/30 font-semibold">Talk</span>
       </div>
     )
   }
@@ -99,7 +99,7 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
             <p className="text-[10px] text-slate-400">Zen Thinking Partner • Guiding Self-Awareness</p>
           </div>
         </div>
-        <button onClick={() => setIsOpen(false)} className="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition">
+        <button onClick={() => setIsOpen(false)} className="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition active:scale-[0.97]">
           <ChevronDown className="h-4 w-4" />
         </button>
       </div>
@@ -120,7 +120,7 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
       {/* Quick Starter Chips */}
       <div className="px-3 py-1 flex flex-wrap gap-1 bg-[#0B0E14]/40 border-t border-white/5">
         {quickChips.map((chip, i) => (
-          <button key={i} disabled={isStreaming} onClick={() => handleSend(chip)} className="text-[10px] px-2 py-0.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 active:scale-[0.98] transition disabled:opacity-40">
+          <button key={i} disabled={isStreaming} onClick={() => handleSend(chip)} className="text-[10px] px-2 py-0.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 active:scale-[0.97] transition disabled:opacity-40">
             "{chip}"
           </button>
         ))}
@@ -128,9 +128,7 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
 
       {/* Input */}
       <div className="p-2.5 border-t border-white/5 bg-[#0B0E14]/80 flex items-center gap-2">
-        <button type="button" className="p-2 rounded-xl bg-white/5 text-slate-400 hover:text-white border border-white/5" title="Voice Input">
-          <Mic className="h-3.5 w-3.5" />
-        </button>
+        <button type="button" className="p-2 rounded-xl bg-white/5 text-slate-400 hover:text-white border border-white/5 active:scale-[0.97]" title="Voice Input"><Mic className="h-3.5 w-3.5" /></button>
         <input
           type="text"
           value={input}
@@ -140,7 +138,7 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
           disabled={isStreaming}
           className="flex-1 bg-[#161922] border border-white/10 rounded-xl px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50"
         />
-        <button onClick={() => handleSend()} disabled={isStreaming || !input.trim()} className="p-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-md active:scale-[0.98] transition disabled:opacity-40">
+        <button onClick={() => handleSend()} disabled={isStreaming || !input.trim()} className="p-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-md active:scale-[0.97] transition disabled:opacity-40">
           <Send className="h-3.5 w-3.5" />
         </button>
       </div>

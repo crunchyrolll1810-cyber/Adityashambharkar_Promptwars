@@ -50,31 +50,31 @@ export const QuickScenarioChips: React.FC<QuickScenarioChipsProps> = ({ onSelect
   ]
 
   return (
-    <div className="w-full mb-6">
-      <div className="flex items-center justify-between mb-2.5">
-        <span className="text-xs font-medium text-slate-400">
+    <div className="w-full">
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
           Or test an example decision with 1 click:
         </span>
-        <span className="text-[11px] text-slate-500">Tap to load</span>
+        <span className="text-xs text-slate-500">Tap to load</span>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
         {scenarios.map((s, i) => (
           <button
             key={i}
             onClick={() => onSelectScenario(s.context, s.rationale)}
-            className={`flex flex-col justify-between p-3.5 rounded-2xl bg-[#161922]/80 hover:bg-[#1C202C] border border-white/10 ${s.borderGlow} text-left transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm group`}
+            className={`flex flex-col justify-between p-4 sm:p-5 rounded-2xl bg-[#161922]/85 hover:bg-[#1C202C] border border-white/10 ${s.borderGlow} text-left transition-all duration-250 hover:-translate-y-1 active:scale-[0.97] shadow-md group`}
           >
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xl group-hover:scale-110 transition-transform">{s.emoji}</span>
-              <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${s.badgeColor}`}>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-2xl group-hover:scale-110 transition-transform duration-200">{s.emoji}</span>
+              <span className={`text-[10px] font-semibold px-2.5 py-0.5 rounded-full border ${s.badgeColor}`}>
                 {s.badge}
               </span>
             </div>
             <div>
-              <span className="block text-xs font-semibold text-slate-100 group-hover:text-white">
+              <span className="block text-xs font-bold text-slate-100 group-hover:text-white">
                 {s.title}
               </span>
-              <span className="block text-[11px] text-slate-400 group-hover:text-slate-300 truncate mt-0.5">
+              <span className="block text-xs text-slate-400 group-hover:text-slate-300 truncate mt-1">
                 {s.subtitle}
               </span>
             </div>
