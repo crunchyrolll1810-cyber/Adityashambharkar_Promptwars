@@ -2,14 +2,14 @@ import { GoogleGenerativeAI } from '@google/generative-ai'
 import { ChatMessage } from '../types/decision.types'
 import { MODEL_POOLS } from './geminiService'
 
-const MENTOR_SYSTEM_INSTRUCTION = `You are ReasonLens Wise Thinking Partner, a calm, warm, and thoughtful senior mentor.
-- You are NOT an adversary. You never argue or tell the user what they should do.
-- You NEVER make the decision for the user. You respect their courage and aspirations.
+const SAGE_SYSTEM_INSTRUCTION = `You are the Great Sage, a calm, profoundly insightful elder guide and thinking partner.
+- You are NOT an adversary. You never judge, argue, or decide for the user.
+- Your role is to guide their self-awareness like a zen master. Respect their ambition and courage.
 - Your goal is to help them walk into their decision with open eyes and full awareness of trade-offs.
-- Speak in simple, everyday conversational English (warm, wise, human).
+- Speak in warm, conversational everyday English (like a wise elder mentor).
 - Keep responses concise: 2 to 4 sentences maximum. Always conclude with one gentle, grounding question.`
 
-const MOCK_MENTOR_REPLIES = [
+const MOCK_SAGE_REPLIES = [
   "I respect that ambition. But walk me through the hardest week: if customer signups take 6 months longer than you hope, what keeps food on your table in month 7?",
   "That makes sense on paper. But real users often say they love an idea, yet hesitate to actually pay. What is one small test you can run this Friday to verify genuine commitment?",
   "A bold leap usually carries quiet sacrifices. Looking two years into the future, what is the single trade-off you might regret not preparing for today?",
@@ -25,7 +25,7 @@ export interface DebateRequest {
   isDemoMode?: boolean
 }
 
-export async function streamDebateMessage(
+export async function streamSageMessage(
   request: DebateRequest,
   onChunk: (token: string) => void
 ): Promise<string> {
@@ -45,7 +45,7 @@ export async function streamDebateMessage(
       const genAI = new GoogleGenerativeAI(apiKey)
       const model = genAI.getGenerativeModel({
         model: modelId,
-        systemInstruction: MENTOR_SYSTEM_INSTRUCTION
+        systemInstruction: SAGE_SYSTEM_INSTRUCTION
       })
 
       const contextPreamble = `Context: User is weighing: "${context || 'a critical decision'}" because: "${rationale || 'of their rationale'}". Key assumption carrying risk: "${highestRiskAssumption || 'untested market demand'}".`
@@ -74,15 +74,17 @@ export async function streamDebateMessage(
 
       return fullResponse
     } catch (err) {
-      console.warn(`[WiseDebate] Model ${modelId} failed, trying fallback...`, err)
+      console.warn(`[GreatSage] Model ${modelId} failed, trying fallback...`, err)
     }
   }
 
   return simulateDebateStream(history.length, onChunk)
 }
 
+export const streamDebateMessage = streamSageMessage
+
 async function simulateDebateStream(turn: number, onChunk: (token: string) => void): Promise<string> {
-  const reply = MOCK_MENTOR_REPLIES[turn % MOCK_MENTOR_REPLIES.length]
+  const reply = MOCK_SAGE_REPLIES[turn % MOCK_SAGE_REPLIES.length]
   const words = reply.split(' ')
   let text = ''
 

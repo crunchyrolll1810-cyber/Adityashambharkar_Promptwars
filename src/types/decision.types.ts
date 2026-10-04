@@ -41,6 +41,7 @@ export interface SocraticQuestion {
 export interface DecisionAnalysis {
   summary: string;
   clarityScore: number;
+  clarityBoost?: number;
   unstatedAssumptions: UnstatedAssumption[];
   blindSpotRisks: BlindSpotRisk[];
   preMortemScenarios: PreMortemScenario[];
@@ -50,7 +51,7 @@ export interface DecisionAnalysis {
 
 export interface ChatMessage {
   id: string;
-  sender: 'user' | 'mentor';
+  sender: 'user' | 'mentor' | 'sage';
   text: string;
 }
 
