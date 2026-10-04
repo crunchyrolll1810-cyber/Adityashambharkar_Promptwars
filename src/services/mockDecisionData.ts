@@ -1,193 +1,193 @@
 import { DecisionAnalysis } from '../types/decision.types';
 
 export const STARTUP_LEAP_MOCK: DecisionAnalysis = {
-  summary: 'Resigning full-time employment to build an AI startup with 6 months cash savings.',
+  summary: 'Quitting my full-time job to build an AI startup with 6 months of savings.',
   clarityScore: 62,
   unstatedAssumptions: [
     {
-      assumption: 'Technical ability to build an AI product is the bottleneck to early startup success.',
+      assumption: 'Being good at coding is enough to build a successful startup.',
       vulnerability: 'HIGH',
-      reasoning: 'AI tech barriers have collapsed; the real friction is distribution, buyer discovery, and sustained retention.'
+      reasoning: 'Building the product is only 20% of the battle. Finding real people who will pay, marketing, and talking to customers is what decides if you survive.'
     },
     {
-      assumption: '6 months of personal runway is sufficient to find product-market fit and generate living revenue.',
+      assumption: '6 months of savings gives me plenty of time to become profitable.',
       vulnerability: 'HIGH',
-      reasoning: 'Average time to seed-stage revenue or funding in B2B/B2C AI is 11–14 months. Month 4 panic causes distressed decisions.'
+      reasoning: 'Most new businesses take at least a year to make dependable income. By month 4 or 5, money anxiety often leads to rushed, desperate choices.'
     },
     {
-      assumption: 'Full-time commitment will unlock exponential productivity compared to evenings and weekends.',
+      assumption: 'Having full days free will make me work twice as fast.',
       vulnerability: 'MED',
-      reasoning: 'Without structured accountability and customer feedback loops, unstructured full-time hours frequently lead to rabbit holes.'
+      reasoning: 'Without a boss or routine, it is very easy to spend weeks polishing tiny features instead of selling to real customers.'
     }
   ],
   blindSpotRisks: [
     {
-      risk: 'Burnout and emotional stress spikes once personal savings cross the 50% drawdown threshold.',
-      impactArea: 'Mental Resilience & Conviction'
+      risk: 'Stress and panic spike once your personal savings drop below half.',
+      impactArea: 'Mental Health & Energy'
     },
     {
-      risk: 'Rapid commoditization by foundation model platform updates (e.g. OpenAI or Google shipping your core feature).',
-      impactArea: 'Competitive Moat'
+      risk: 'A bigger company or free tool launches the exact same feature you spent months building.',
+      impactArea: 'Competition'
     }
   ],
   preMortemScenarios: [
     {
-      whatWentWrong: 'Month 5: Built an impressive multimodal agent, but zero paying customers. Savings down to 4 weeks; forced to take contract work.',
-      catalyst: 'Spent 16 weeks polishing code before having 20 customer discovery interviews.'
+      whatWentWrong: 'Month 5: You built a working prototype, but have zero paying customers. Savings are almost gone and you have to take random freelance gigs.',
+      catalyst: 'Spent 4 months coding in private instead of talking to 20 potential buyers first.'
     }
   ],
   socraticQuestions: [
     {
-      question: 'What is the single riskiest assumption about customer willingness-to-pay that you could test this Saturday without quitting your job?',
-      reasoningAngle: 'De-risking through lean pre-mortems'
+      question: 'Can you pre-sell this to 3 paying customers this weekend before submitting your resignation letter?',
+      reasoningAngle: 'Testing customer demand before taking big risks'
     },
     {
-      question: 'When your savings reach month 4 with zero revenue, what objective rule determines whether you pivot, fundraise, or pause?',
-      reasoningAngle: 'Pre-committing to exit and pivot tripwires'
+      question: 'If you have zero income by month 4, what is your exact rule for whether you keep going or pause?',
+      reasoningAngle: 'Setting a clear safety net in advance'
     },
     {
-      question: 'Are you leaving your job because you are deeply pulled by this specific customer pain, or because you are pushed by burnout?',
-      reasoningAngle: 'Internal motivation audit: Push vs Pull'
+      question: 'Are you quitting because you love this startup idea, or because you are simply exhausted from your current job?',
+      reasoningAngle: 'Honest motivation check: passion vs burnout'
     }
   ],
-  nonDecisionPledge: 'ReasonLens does not choose your path. High-stakes conviction belongs to human founders — our role is solely to illuminate the terrain.'
+  nonDecisionPledge: 'ReasonLens never decides for you. We stress-test your logic so you decide with conviction.'
 };
 
 export const REWRITE_MOCK: DecisionAnalysis = {
-  summary: 'Total architecture rewrite of web application from scratch in a modern stack.',
+  summary: 'Scrapping our web app and rebuilding it from scratch with a new tech stack.',
   clarityScore: 54,
   unstatedAssumptions: [
     {
-      assumption: 'A greenfield rewrite will avoid the architectural bugs and technical debt of the legacy system.',
+      assumption: 'Starting fresh will permanently get rid of bugs and messy code.',
       vulnerability: 'HIGH',
-      reasoning: 'The old codebase contains hundreds of unwritten edge-case fixes that will be inadvertently wiped out in a fresh rewrite.'
+      reasoning: 'The old code has years of hidden bug fixes and edge cases that will be accidentally forgotten and broken in a fresh rewrite.'
     },
     {
-      assumption: 'Product velocity will instantly surge once the new stack is deployed.',
+      assumption: 'Customers will wait patiently while we spend months rebuilding.',
+      vulnerability: 'HIGH',
+      reasoning: 'While you spend 6 months rebuilding what already exists, competitors will keep shipping new features and stealing your users.'
+    },
+    {
+      assumption: 'Our team will build features twice as fast once the new stack is ready.',
       vulnerability: 'MED',
-      reasoning: 'Team familiarity with new abstractions takes 3–6 months to stabilize, offsetting initial theoretical velocity gains.'
-    },
-    {
-      assumption: 'Competitors and users will wait patiently during the 6-month feature freeze.',
-      vulnerability: 'HIGH',
-      reasoning: 'A total rewrite pauses customer-facing feature delivery, causing user churn and lost market momentum.'
+      reasoning: 'Learning new tools always takes time, and new codebases develop their own messy parts very quickly.'
     }
   ],
   blindSpotRisks: [
     {
-      risk: 'The "Second-System Effect": temptation to over-engineer and inflate scope into the new platform.',
-      impactArea: 'Engineering Timelines & Delivery'
+      risk: 'Scope creep: adding new bells and whistles to the rewrite until it takes a year instead of 3 months.',
+      impactArea: 'Product Deadlines'
     }
   ],
   preMortemScenarios: [
     {
-      whatWentWrong: 'Month 7: Rewrite is only 70% complete, legacy system is breaking from neglect, and team is demoralized maintaining two branches.',
-      catalyst: 'Underestimated the hidden business logic embedded in legacy edge-case handlers.'
+      whatWentWrong: 'Month 7: The rewrite is taking twice as long as expected, users are frustrated by a lack of updates, and the team is burned out.',
+      catalyst: 'Underestimated all the hidden business rules that were buried in the old code.'
     }
   ],
   socraticQuestions: [
     {
-      question: 'Can you isolate the top 10% of legacy code causing 80% of bugs and strangle it incrementally rather than rewriting everything?',
-      reasoningAngle: 'Strangler fig pattern vs Big Bang risk'
+      question: 'Can you fix the slowest 10% of the old code instead of tearing down the whole house?',
+      reasoningAngle: 'Fixing the worst parts first vs starting over'
     },
     {
-      question: 'What happens to customer churn if your competitor releases 3 major requested features while you are 4 months into the rewrite?',
-      reasoningAngle: 'Opportunity cost and competitive exposure'
+      question: 'What will you do if users start switching to a competitor while you are mid-rewrite?',
+      reasoningAngle: 'Counting the cost of paused feature growth'
     },
     {
-      question: 'What structural engineering discipline will prevent the new codebase from degrading into the exact same state in 18 months?',
-      reasoningAngle: 'Root-cause process vs syntax delusion'
+      question: 'What team habits will stop the new codebase from becoming just as messy in 18 months?',
+      reasoningAngle: 'Fixing team habits, not just programming tools'
     }
   ],
-  nonDecisionPledge: 'ReasonLens does not choose your path. High-stakes conviction belongs to human architects — our role is solely to illuminate the terrain.'
+  nonDecisionPledge: 'ReasonLens never decides for you. We stress-test your logic so you decide with conviction.'
 };
 
 export const PRICING_MOCK: DecisionAnalysis = {
-  summary: 'Deprecating free tier and converting product to upfront paid subscription model.',
+  summary: 'Removing our free plan and making all new users pay upfront.',
   clarityScore: 71,
   unstatedAssumptions: [
     {
-      assumption: 'Free users are non-essential dead weight whose churn will not impact growth.',
+      assumption: 'Free users are useless freeloaders who cost money.',
       vulnerability: 'HIGH',
-      reasoning: 'Free users frequently drive top-of-funnel virality, organic SEO backlinks, and peer-to-peer word-of-mouth recommendations.'
+      reasoning: 'Free users are often your best marketers. They share your app with friends, write reviews, and bring in the people who eventually pay.'
     },
     {
-      assumption: 'Eliminating the free tier will automatically increase paid conversion rates.',
+      assumption: 'People who won\'t pay today will happily pay if we put up a paywall.',
       vulnerability: 'MED',
-      reasoning: 'Without a risk-free playground to experience value, top-of-funnel visitor signups may drop by 80%+.'
+      reasoning: 'If people are not already in love with your app, forcing them to pay upfront usually makes them leave immediately.'
     }
   ],
   blindSpotRisks: [
     {
-      risk: 'Backlash on social platforms (Hacker News, Reddit, Twitter) from sudden rug-pull of free features.',
-      impactArea: 'Brand Equity & Community Trust'
+      risk: 'Angry social media posts from existing users who feel like a free tool was taken away.',
+      impactArea: 'Reputation & Trust'
     }
   ],
   preMortemScenarios: [
     {
-      whatWentWrong: 'Month 4: Server costs dropped 50%, but new customer acquisition cratered 85%; net revenue shrank below previous baseline.',
-      catalyst: 'Failed to recognize that word-of-mouth advocacy was almost entirely powered by free power users.'
+      whatWentWrong: 'Month 4: Server costs went down by 50%, but new signups plummeted by 85% and overall revenue actually shrank.',
+      catalyst: 'Word of mouth dried up because students and everyday users could no longer try the tool.'
     }
   ],
   socraticQuestions: [
     {
-      question: 'What percentage of your current paying customers initially signed up as free users and upgraded months later?',
-      reasoningAngle: 'Lagged conversion attribution'
+      question: 'How many of your current paying users originally started as free users?',
+      reasoningAngle: 'Understanding where your paying customers come from'
     },
     {
-      question: 'Have you considered usage-based friction limits (e.g. 5 actions/month) instead of a binary paywall?',
-      reasoningAngle: 'Granular gatekeeper monetization'
+      question: 'Could you add a simple usage limit (like 10 uses a month) instead of shutting out free users completely?',
+      reasoningAngle: 'Soft limits vs hard paywalls'
     },
     {
-      question: 'How will you maintain organic discovery when your free community stops recommending your tool to colleagues?',
-      reasoningAngle: 'Organic distribution decay'
+      question: 'Where will new people hear about your app once free users stop recommending it to colleagues?',
+      reasoningAngle: 'Keeping your word-of-mouth growth alive'
     }
   ],
-  nonDecisionPledge: 'ReasonLens does not choose your path. High-stakes conviction belongs to human founders — our role is solely to illuminate the terrain.'
+  nonDecisionPledge: 'ReasonLens never decides for you. We stress-test your logic so you decide with conviction.'
 };
 
 export const CAREER_MOCK: DecisionAnalysis = {
-  summary: 'Opting out of campus placements to pursue open-source contributions full-time.',
+  summary: 'Skipping college placement interviews to focus solely on open-source coding.',
   clarityScore: 59,
   unstatedAssumptions: [
     {
-      assumption: 'Hiring managers at top engineering companies actively scout public GitHub PRs.',
+      assumption: 'Company recruiters regularly look through public GitHub pull requests to hire candidates.',
       vulnerability: 'HIGH',
-      reasoning: 'Most corporate recruiting funnels rely on ATS keyword filters, campus pipelines, and automated screening algorithms.'
+      reasoning: 'Most corporate hiring relies on standard campus interviews, resume filters, and referrals, not inspecting personal code repositories.'
     },
     {
-      assumption: 'High-quality open-source code will speak louder than formal credential gates and HR screens.',
+      assumption: 'Writing good code is the only thing needed to get a job offer.',
       vulnerability: 'MED',
-      reasoning: 'While senior engineers appreciate code, you still must navigate HR coordinators who prioritize formal degree verification.'
+      reasoning: 'Companies also test communication, problem solving on a whiteboard, and whether someone inside the company recommended you.'
     }
   ],
   blindSpotRisks: [
     {
-      risk: 'Loss of peer support network and structured interview fallback during the prime college recruitment cycle.',
-      impactArea: 'Career Security & Momentum'
+      risk: 'Losing the safety net of campus hiring when all your batchmates secure jobs.',
+      impactArea: 'Career Security'
     }
   ],
   preMortemScenarios: [
     {
-      whatWentWrong: 'Month 6: Outstanding contributions merged into 3 OSS repos, but 0 interview invites received; peer group already placed.',
-      catalyst: 'Lacked direct personal relationships with maintainers and hiring directors who have outbound hiring authority.'
+      whatWentWrong: 'Month 6: Your code got accepted into popular projects, but you have zero job offers and the campus hiring season is closed.',
+      catalyst: 'Lacked direct connections with engineering managers who have the authority and budget to hire.'
     }
   ],
   socraticQuestions: [
     {
-      question: 'Can you secure 1 baseline campus offer first, and use the security of that offer to negotiate remote OSS roles without existential anxiety?',
-      reasoningAngle: 'Asymmetric downside capping'
+      question: 'Can you secure one safe campus job offer first, and then contribute to open-source without daily anxiety?',
+      reasoningAngle: 'Keeping a safety net while pursuing your passion'
     },
     {
-      question: 'Who is the specific individual at your target company who will sponsor your hiring loop based on your GitHub profile?',
-      reasoningAngle: 'Named champion vs hopeful meritocracy'
+      question: 'Do you know a specific engineer at your target company who will vouch for your pull requests?',
+      reasoningAngle: 'Having a real sponsor vs hoping to be discovered'
     },
     {
-      question: 'If you fail to get hired via GitHub in 9 months, what is your systematic fallback plan?',
-      reasoningAngle: 'Worst-case survival contingency'
+      question: 'If you do not get a job offer in 6 months, what is your step-by-step backup plan?',
+      reasoningAngle: 'Planning for the worst-case scenario'
     }
   ],
-  nonDecisionPledge: 'ReasonLens does not choose your path. High-stakes conviction belongs to human decision-makers — our role is solely to illuminate the terrain.'
+  nonDecisionPledge: 'ReasonLens never decides for you. We stress-test your logic so you decide with conviction.'
 };
 
 export function getMockAnalysis(context?: string): DecisionAnalysis {

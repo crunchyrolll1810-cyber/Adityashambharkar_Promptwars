@@ -65,15 +65,15 @@ export function App() {
       <main className="flex-1 max-w-4xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-8">
         {/* Dynamic Header */}
         <div className="mb-6 text-center sm:text-left">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 text-slate-300 text-xs font-mono border border-white/10 mb-3 shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-brand-400 animate-pulse" />
-            <span>Google Labs Experiment • Socratic Engine</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-300 text-xs font-semibold border border-brand-500/20 mb-3 shadow-sm">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Your AI Thinking Partner</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
             ReasonLens
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl leading-relaxed">
-            Spot unstated assumptions, simulate 12-month pre-mortems, and sharpen high-stakes conviction before pulling the trigger.
+            Spot what you might be missing, test your assumptions, and make confident decisions.
           </p>
         </div>
 
@@ -106,7 +106,7 @@ export function App() {
               }`}
             >
               <Eye className="h-3.5 w-3.5" />
-              <span>Socratic Dashboard</span>
+              <span>Decision Breakdown</span>
             </button>
             <button
               onClick={() => setActiveTab('stream')}
@@ -117,7 +117,7 @@ export function App() {
               }`}
             >
               <Code className="h-3.5 w-3.5" />
-              <span>Raw JSON Stream</span>
+              <span>Raw JSON</span>
             </button>
           </div>
         )}

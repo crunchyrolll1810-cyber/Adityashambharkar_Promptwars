@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
             <div className="flex items-center gap-2">
               <span className="font-bold tracking-tight text-white text-base sm:text-lg">ReasonLens</span>
               <span className="px-2 py-0.5 text-[10px] font-semibold tracking-wide uppercase bg-brand-500/20 text-brand-300 rounded-full border border-brand-500/30">
-                Socratic AI
+                Thinking Partner
               </span>
             </div>
             <p className="text-[11px] text-slate-400 hidden xs:block sm:block">Powered by Google Antigravity & Gemini</p>

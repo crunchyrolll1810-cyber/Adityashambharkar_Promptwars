@@ -40,7 +40,7 @@ export const StreamingCard: React.FC<StreamingCardProps> = ({
         <div className="flex items-center gap-2">
           <Terminal className="h-4 w-4 text-brand-400" />
           <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">
-            Live Reasoning Output
+            Live Analysis
           </span>
           {isDemoMode && (
             <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">

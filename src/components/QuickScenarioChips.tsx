@@ -37,7 +37,7 @@ export const QuickScenarioChips: React.FC<QuickScenarioChipsProps> = ({ onSelect
     <div className="w-full mb-6">
       <div className="flex items-center justify-between mb-2">
         <span className="text-[11px] font-semibold text-slate-400 tracking-wider uppercase">
-          High-Stakes Decision Presets (1-Tap Analysis)
+          Example Decisions (Tap to Try)
         </span>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">

@@ -59,13 +59,13 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
       <div className="space-y-1.5">
         <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-300">
           <Compass className="h-3.5 w-3.5 text-brand-400" />
-          <span>Decision Context (What are you deciding?)</span>
+          <span>What are you deciding?</span>
         </div>
         <textarea
           value={context}
           onChange={(e) => onChangeContext(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="e.g. Pivoting from freemium to an enterprise sales model in Q3..."
+          placeholder="e.g. Thinking of quitting my job to build a startup..."
           rows={2}
           className="w-full bg-slate-950/60 rounded-xl px-3 py-2 text-slate-100 placeholder-slate-500 text-xs border border-white/5 focus:border-brand-500/50 focus:outline-none resize-none"
         />
@@ -74,13 +74,13 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
       <div className="space-y-1.5">
         <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-300">
           <Layers className="h-3.5 w-3.5 text-indigo-400" />
-          <span>Proposed Rationale (Why do you believe this is sound?)</span>
+          <span>Why do you think it's a good idea?</span>
         </div>
         <textarea
           value={rationale}
           onChange={(e) => onChangeRationale(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="e.g. Enterprise contracts provide 10x ACV and lower churn despite 6-month runway..."
+          placeholder="e.g. I have 6 months of savings and strong coding skills..."
           rows={2}
           className="w-full bg-slate-950/60 rounded-xl px-3 py-2 text-slate-100 placeholder-slate-500 text-xs border border-white/5 focus:border-brand-500/50 focus:outline-none resize-none"
         />
@@ -95,9 +95,9 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
             className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 active:scale-[0.97] transition-all"
           >
             <ImageIcon className="h-3.5 w-3.5 text-brand-400" />
-            <span className="text-[11px]">Attach Context / Doc</span>
+            <span className="text-[11px]">Attach Image / Note</span>
           </button>
-          <span className="text-[10px] text-slate-500 hidden sm:inline">Ctrl+Enter to examine</span>
+          <span className="text-[10px] text-slate-500 hidden sm:inline">Ctrl+Enter to submit</span>
         </div>
 
         <button
@@ -110,7 +110,7 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
           ) : (
             <Send className="h-3.5 w-3.5" />
           )}
-          <span>{isLoading ? 'Interrogating...' : 'Examine Decision'}</span>
+          <span>{isLoading ? 'Reviewing...' : 'Review My Decision'}</span>
         </button>
       </div>
     </div>
