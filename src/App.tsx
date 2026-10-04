@@ -53,7 +53,7 @@ export function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col relative overflow-x-hidden selection:bg-brand-500/30 selection:text-brand-100">
+    <div className="min-h-screen bg-slate-950 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px] text-slate-100 flex flex-col relative overflow-x-hidden selection:bg-brand-500/30 selection:text-brand-100">
       {/* Ambient Radial Background Accents */}
       <div className="fixed top-0 left-1/4 w-80 sm:w-96 h-80 sm:h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="fixed bottom-10 right-1/4 w-80 sm:w-96 h-80 sm:h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -65,9 +65,9 @@ export function App() {
       <main className="flex-1 max-w-4xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-8">
         {/* Dynamic Header */}
         <div className="mb-6 text-center sm:text-left">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-300 text-xs font-semibold border border-brand-500/20 mb-3">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>AI Socratic Thinking Companion</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 text-slate-300 text-xs font-mono border border-white/10 mb-3 shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-brand-400 animate-pulse" />
+            <span>Google Labs Experiment • Socratic Engine</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
             ReasonLens
@@ -124,7 +124,11 @@ export function App() {
 
         {/* Content View */}
         {parsedAnalysis && activeTab === 'dashboard' ? (
-          <DecisionDashboard analysis={parsedAnalysis} />
+          <DecisionDashboard
+            analysis={parsedAnalysis}
+            context={context}
+            rationale={rationale}
+          />
         ) : (
           <StreamingCard
             content={outputContent}
