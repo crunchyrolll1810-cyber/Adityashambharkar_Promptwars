@@ -61,6 +61,27 @@
   .glow-gemini {
     box-shadow: 0 0 35px -5px rgba(124, 58, 237, 0.35);
   }
+
+  .vignette-overlay {
+    background: radial-gradient(circle at 50% 10%, transparent 55%, rgba(5, 8, 15, 0.85) 100%);
+    pointer-events: none;
+  }
+
+  .scanline-overlay {
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.18) 50%), linear-gradient(90deg, rgba(66, 133, 244, 0.015), rgba(124, 58, 237, 0.015), rgba(234, 67, 53, 0.015));
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+  }
+
+  .focus-glow:focus-within {
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.4), 0 0 25px -5px rgba(139, 92, 246, 0.3);
+    border-color: rgba(139, 92, 246, 0.6);
+  }
+
+  .accent-bar-violet {
+    border-left: 2px solid #8B5CF6;
+    padding-left: 0.75rem;
+  }
 }
 
 /* Custom Sleek Obsidian Scrollbar */

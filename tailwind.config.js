@@ -8,6 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        coral: { DEFAULT: '#F43F5E', 400: '#FB7185', 500: '#F43F5E' },
+        emerald: { DEFAULT: '#10B981', 400: '#34D399', 500: '#10B981' },
+        amber: { DEFAULT: '#F59E0B', 400: '#FBBF24', 500: '#F59E0B' },
+        cyan: { DEFAULT: '#06B6D4', 400: '#22D3EE', 500: '#06B6D4' },
+        violet: { DEFAULT: '#8B5CF6', 400: '#A78BFA', 500: '#8B5CF6', 600: '#7C3AED' },
         brand: {
           50: '#f5f3ff',
           100: '#ede9fe',
@@ -20,12 +25,37 @@ export default {
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'fade-in': 'fadeIn 0.3s ease-out forwards',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'border-glow': 'borderGlow 3s ease-in-out infinite alternate',
+        'waveform': 'waveform 1.2s ease-in-out infinite alternate',
+        'radial-pulse': 'radialPulse 4s ease-in-out infinite',
+        'slide-up-fade': 'slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(8px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        }
+        },
+        slideUpFade: {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        borderGlow: {
+          '0%': { borderColor: 'rgba(139, 92, 246, 0.2)', boxShadow: '0 0 15px rgba(139, 92, 246, 0.1)' },
+          '100%': { borderColor: 'rgba(139, 92, 246, 0.6)', boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' },
+        },
+        waveform: {
+          '0%': { height: '20%' },
+          '100%': { height: '100%' },
+        },
+        radialPulse: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.12' },
+          '50%': { transform: 'scale(1.15)', opacity: '0.22' },
+        },
       }
     },
   },

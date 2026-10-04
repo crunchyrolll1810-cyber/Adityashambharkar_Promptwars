@@ -133,8 +133,8 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); handleSend() } }}
-          placeholder="Speak with Great Sage... (Ctrl+Enter)"
+          onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend() } }}
+          placeholder="Speak with Great Sage... (Press Enter to send)"
           disabled={isStreaming}
           className="flex-1 bg-[#161922] border border-white/10 rounded-xl px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50"
         />

@@ -64,7 +64,7 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
       )}
 
       <div className="space-y-2">
-        <label className="block text-xs font-semibold uppercase tracking-wider text-indigo-300">
+        <label className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
           What decision are you thinking through?
         </label>
         <textarea
@@ -73,12 +73,12 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
           onKeyDown={handleKeyDown}
           placeholder="e.g., Thinking of quitting my job to build an AI startup full-time..."
           rows={3}
-          className="w-full bg-[#0B0E14]/90 rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/5 focus:border-indigo-500/60 focus:outline-none resize-none leading-relaxed transition"
+          className="w-full bg-[#0B0E14]/90 rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/5 focus:border-violet-500/60 focus:shadow-[0_0_0_2px_rgba(139,92,246,0.4)] focus:outline-none resize-none leading-relaxed transition"
         />
       </div>
 
       <div className="space-y-2">
-        <label className="block text-xs font-semibold uppercase tracking-wider text-indigo-300">
+        <label className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
           Why do you feel this is the right move?
         </label>
         <textarea
@@ -87,7 +87,7 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
           onKeyDown={handleKeyDown}
           placeholder="e.g., I have 6 months of runway, strong technical skills, and early user interest..."
           rows={3}
-          className="w-full bg-[#0B0E14]/90 rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/5 focus:border-indigo-500/60 focus:outline-none resize-none leading-relaxed transition"
+          className="w-full bg-[#0B0E14]/90 rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/5 focus:border-violet-500/60 focus:shadow-[0_0_0_2px_rgba(139,92,246,0.4)] focus:outline-none resize-none leading-relaxed transition"
         />
       </div>
 
@@ -99,21 +99,21 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
             onClick={() => fileInputRef.current?.click()}
             className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs text-slate-300 hover:text-white hover:bg-white/5 border border-white/10 active:scale-[0.97] transition-all"
           >
-            <ImageIcon className="h-4 w-4 text-indigo-400" />
+            <ImageIcon className="h-4 w-4 text-violet-400" />
             <span>Add screenshot or sketch</span>
           </button>
-          <span className="text-xs text-slate-500 hidden sm:inline">Ctrl+Enter to run</span>
+          <span className="font-mono text-[11px] text-slate-500 hidden sm:inline">[CTRL+ENTER]</span>
         </div>
 
         <button
           onClick={onSubmit}
           disabled={isLoading || (!context.trim() && !rationale.trim())}
-          className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-indigo-500/25 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97] transition-all"
+          className={`relative flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-indigo-500/25 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97] transition-all group ${isLoading ? 'ring-2 ring-violet-500/80 ring-offset-2 ring-offset-[#090D16] animate-pulse' : ''}`}
         >
           {isLoading ? (
             <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
           ) : (
-            <Send className="h-4 w-4" />
+            <Send className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           )}
           <span>{isLoading ? 'Exploring with Gemini...' : 'Explore My Assumptions ✨'}</span>
         </button>

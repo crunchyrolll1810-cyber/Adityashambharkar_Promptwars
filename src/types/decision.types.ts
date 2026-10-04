@@ -11,10 +11,17 @@ export interface DecisionInputFile {
   mimeType: string;
 }
 
+export interface CalibrationAnswer {
+  questionId: string;
+  question: string;
+  selectedOption: string;
+}
+
 export interface DecisionInput {
   context: string;
   rationale: string;
   files?: DecisionInputFile[];
+  calibrationAnswers?: CalibrationAnswer[];
 }
 
 export interface UnstatedAssumption {

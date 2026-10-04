@@ -66,9 +66,17 @@ export async function generateContentStream(
         }
       })
 
-      const userPrompt = decisionInput
+      let userPrompt = decisionInput
         ? `Decision Context: ${decisionInput.context}\nProposed Rationale: ${decisionInput.rationale}`
         : prompt || ''
+
+      if (decisionInput?.calibrationAnswers && decisionInput.calibrationAnswers.length > 0) {
+        userPrompt += `\n\nReal-World Reality Calibration Parameters:\n`
+        for (const ans of decisionInput.calibrationAnswers) {
+          userPrompt += `- ${ans.question}: ${ans.selectedOption}\n`
+        }
+        userPrompt += `\nPlease factor these calibration parameters directly into the clarityScore and unstatedAssumptions.`
+      }
 
       const contents: any[] = [userPrompt]
 
@@ -103,14 +111,21 @@ export async function generateContentStream(
 
   console.error('[ReasonLens] All M1 models exhausted or rate-limited. Activating fail-safe simulation.')
   onReset?.()
-  return simulateStreamingResponse(onChunk, reqContext)
+  return simulateStreamingResponse(onChunk, reqContext, decisionInput?.calibrationAnswers)
 }
 
 async function simulateStreamingResponse(
   onChunk: (token: string) => void,
-  context?: string
+  context?: string,
+  calibrationAnswers?: any[]
 ): Promise<string> {
   const analysis = getMockAnalysis(context)
+  if (calibrationAnswers && calibrationAnswers.length > 0) {
+    const hasZeroBuffer = calibrationAnswers.some((a: any) => a.selectedOption?.includes('Zero cushion'))
+    const hasHardProof = calibrationAnswers.some((a: any) => a.selectedOption?.includes('Hard commitments'))
+    if (hasZeroBuffer) analysis.clarityScore = Math.max(32, analysis.clarityScore - 12)
+    if (hasHardProof) analysis.clarityScore = Math.min(92, analysis.clarityScore + 14)
+  }
   const jsonString = JSON.stringify(analysis, null, 2)
   const lines = jsonString.split('\n')
   let accumulated = ''
