@@ -4,104 +4,102 @@
 [![Gemini](https://img.shields.io/badge/Model-Google%20Gemini-8B5CF6?logo=google&logoColor=white)](https://aistudio.google.com/)
 [![Built With Antigravity](https://img.shields.io/badge/Built%20With-Google%20Antigravity-4F46E5)](https://antigravity.google/)
 [![PromptWars 2026](https://img.shields.io/badge/Hackathon-PromptWars%202026-F59E0B)](https://hack2skill.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-10B981.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-10B981.svg)](LICENSE)
 
 > **"ReasonLens never decides for you. We stress-test your logic so you decide with conviction."**
 
-ReasonLens is an experimental **AI Thinking Partner** built in the spirit of Google Labs. Rather than generating robotic answers or making decisions on behalf of users, ReasonLens acts as an intellectual mirror: unmasking fragile unstated assumptions, simulating a 12-month reality check, and asking tough questions that force you to **use your own brain**.
+ReasonLens is an experimental **AI Thinking Partner** built in the spirit of Google Labs and Google Antigravity. Rather than generating superficial advice or usurping your decision-making agency, ReasonLens acts as an intellectual mirror: unmasking fragile unstated assumptions, forecasting potential 12-month failure modes, and asking tough questions that force you to **use your own brain**.
 
 ---
 
-## 🚩 The Problem: Why Most Decisions Fail (and Why AI Makes It Worse)
+## 🚩 The Problem: Why Most High-Stakes Decisions Fail
 
-When humans make high-stakes choices—quitting a job for a startup, rewriting an entire codebase, pivoting a business model, or skipping campus placements for open-source—we suffer from two fatal cognitive traps:
-1. **Confirmation Bias & Availability Heuristic:** We fall in love with our plan and fixate on what supports it, ignoring the silent, fragile premises underneath.
-2. **AI "Yes-Men" & Robbed Agency:** Most modern AI tools make this worse in one of two ways:
-   - **They act as sycophants:** Validating whatever idea you type because language models are trained to be agreeable.
-   - **Or they usurp human agency:** Answering *"Based on your input, you should choose Option B"*. This strips away human responsibility, leaving the user vulnerable and unprepared when reality hits.
+When humans make major career, technical, or financial choices—such as quitting a job for a startup, rewriting an entire legacy codebase, pivoting a business model, or skipping campus placements—they suffer from two fatal cognitive traps:
 
----
-
-## 💡 The Solution: ReasonLens
-
-ReasonLens flips the paradigm. It is designed around a strict invariant: **The AI is forbidden from telling you what to do.**
-
-Instead of acting as a GPS that tells you which turn to take, ReasonLens acts as a **stress-testing laboratory**:
-- It pulls apart your **Decision Context** from your **Proposed Rationale**.
-- It extracts the **hidden premises you took for granted** without realizing it.
-- It calculates an objective **Clarity Score** based on real-world constraints.
-- It simulates a **12-Month Reality Check Timeline** to show where things could stall.
-- It connects you with the **Great Sage**, a calm, wise mentor that questions your path so you walk into it with open eyes.
+1. **Confirmation Bias & Fragile Premises:** We fall in love with our plan, fixating only on evidence that supports it while remaining completely blind to the silent, unstated assumptions underpinning the entire move.
+2. **Sycophantic AI & Robbed Human Agency:** Most modern AI tools exacerbate this problem in one of two ways:
+   - **They act as agreeable "Yes-Men":** Reinforcing your biases because language models are RLHF-tuned to be polite and agreeable.
+   - **They usurp human judgment:** Spitting out definitive verdicts (*"Based on your inputs, you should choose Option B"*). This strips away human ownership, leaving you unprepared and vulnerable when real-world friction hits.
 
 ---
 
-## 🧠 How We Force Users to Use Their Brain (Instead of Guiding Them)
+## 💡 How ReasonLens Solves It
+
+ReasonLens flips the traditional AI paradigm. It is engineered around an unshakeable invariant: **The AI is strictly forbidden from making the decision for you.**
+
+Instead of acting as a GPS that tells you which route to take, ReasonLens operates as a **stress-testing laboratory**:
+
+1. **Decoupled Context & Rationale:** Separates *what you are deciding* from *why you believe it will work*, allowing objective inspection of your reasoning chain.
+2. **Unstated Assumptions Unmasked:** Extracts the invisible gambles you took for granted (e.g., *"assuming you will find 3 enterprise customers in 60 days"*), grading each by vulnerability with 1-click **48h Stress Tests**.
+3. **12-Month Failure Forecaster (Pre-Mortem):** Simulates a prospective post-mortem across Months 1–3, 4–8, and 9–12 to uncover the catalyst that could derail your plan before you invest capital or time.
+4. **Answerable Reflection Loop:** Presents targeted questions with interactive reflection textareas. Answering them triggers a re-evaluation loop that updates your **Clarity Score**.
+5. **The Great Sage (Wise Thinking Companion):** A multi-turn mentor floating companion that respects your ambition, but asks grounding questions so you walk into your choice with open eyes.
+
+---
+
+## 🛸 How This Was Made Using Google Antigravity
+
+ReasonLens was conceived, architected, and built from scratch using the **Google Antigravity (AGY)** agentic AI development platform:
+
+```
+                      ┌──────────────────────────────────────────────┐
+                      │          Google Antigravity Agent            │
+                      │  (Autonomous Planning & Pair Programming)    │
+                      └──────────────────────┬───────────────────────┘
+                                             │
+             ┌───────────────────────────────┼───────────────────────────────┐
+             ▼                               ▼                               ▼
+┌─────────────────────────┐     ┌─────────────────────────┐     ┌─────────────────────────┐
+│     Agentic Skills      │     │  Engineering Invariant  │     │   Antigravity Visuals   │
+│ creative-code-architect │     │   Strict File Cap Law   │     │  Canvas Magnetic Grid   │
+│ hackathon-sprint-master │     │   Every file < 150 LOC  │     │ Staggered Blur-Fade Text│
+└─────────────────────────┘     └─────────────────────────┘     └─────────────────────────┘
+```
+
+### 1. Autonomous Planning & Pair Programming
+- Developed through Antigravity's **Planning Mode**, generating structured implementation plans, research notes, and architectural walkthroughs prior to code execution.
+- Leveraged Antigravity's **Background Task Execution** and non-blocking reactive wakeups to manage concurrent TypeScript compilation, Vite bundling, and dependency audits.
+
+### 2. Specialized Agentic Skills
+- **`creative-code-architect`**: Enforced Google Labs aesthetic tokens, micro-interactions (magnetic cursor physics, tactile button compressions, spotlight radial cards), and MVI state isolation.
+- **`hackathon-sprint-master`**: Orchestrated the sprint lifecycle from 4-tier problem dissection, sweet-spot synthesis, to rapid feature delivery under strict competition deadlines.
+
+### 3. Strict Architectural Invariant: 150-Line Hard Cap
+To ensure zero monolithic bloat and absolute maintainability, every single file was held to a **strict limit of under 150 lines of code**:
+- Decomposed data sets (`mockDecisionData.ts`, `mockScenariosPart2.ts`, `calibrationQuestions.ts`).
+- Decoupled complex UI into modular components (`ClarityGauge.tsx`, `HeroHeader.tsx`, `GreatSageWidget.tsx`, `ReflectionSection.tsx`).
+- Separated services into clean single-responsibility modules (`geminiService.ts`, `debateService.ts`, `reEvaluationService.ts`).
+- **Result:** 100% of all 22 source and style files strictly comply with the rule.
+
+### 4. Replicating Antigravity's Signature Visual Identity
+- **Interactive Magnetic Dot Canvas (`InteractiveDotGrid.tsx`):** A custom 60fps HTML5 canvas dot matrix where dots within a 140px radius gently pull toward the cursor with spring dampening physics, mirroring the [antigravity.google](https://antigravity.google) homepage.
+- **Staggered Blur-Fade Typography (`HeroHeader.tsx`):** Words (`INTERROGATE`, `YOUR`, `THINKING.`) float in sequentially from a 12px Gaussian blur with cubic-bezier easing.
+- **Dynamic Decision Prompt Carousel:** Real-world dilemmas smoothly fade out and fade in with an ethereal upward translation and a glowing gradient cursor.
+- **Obsidian Glass & Ambient Aurora:** Deep `#090D16` canvas illuminated by multi-layered volumetric glows and scanline CRT overlays.
+
+---
+
+## 🧠 Traditional AI vs. ReasonLens
 
 | Traditional AI Assistants | ReasonLens Thinking Partner |
 | :--- | :--- |
-| *"You should quit your job and pursue the startup."* | *"What evidence proves customer demand, and what sustains you in month 7 if sales take a year?"* |
+| *"You should quit your job and launch the company."* | *"What evidence proves customer demand, and what sustains you in month 7 if sales take a year?"* |
 | Tells you what to do (passive reliance). | Asks grounding questions that demand reflection (active agency). |
-| Validates your biases with pleasant generic advice. | Identifies your most fragile unstated assumption and challenges it. |
+| Validates your biases with sycophantic praise. | Identifies your most fragile unstated assumption and challenges it. |
 | Ignores failure modes until they happen. | Runs a prospective 12-month reality check before you commit resources. |
-| Human is an onlooker. | **Human retains 100% of the decision ownership and conviction.** |
+| Human is a passive consumer. | **Human retains 100% of the decision ownership and conviction.** |
 
 ---
 
-## 🔄 The 4-Step Interactive Thinking Loop
+## 🛠️ Technical Stack & Architecture
 
-```mermaid
-graph TD
-    A["1. Context & Rationale Input<br/><i>Expressive Chips + Text + Optional Docs</i>"] --> B["2. Reality Calibration Step<br/><i>3 Quick MCQs: Stakes, Evidence & Buffer</i>"]
-    B --> C["3. Gemini Inference & Stress-Testing<br/><i>Structured Schema Extraction & Real-Time Stream</i>"]
-    C --> D["4. Interactive Decision Dashboard<br/><i>Clarity Score, Assumptions Matrix & Reality Timeline</i>"]
-    D --> E["5. Continuous Reflection & Great Sage<br/><i>Answer Tough Questions ➔ Clarity Boost & Live Mentor Chat</i>"]
-```
-
-### 1. Unified Generative Studio Canvas
-- Separates **"What are you deciding?"** from **"Why do you think it's a good idea?"**.
-- Includes 4 Google Labs **Expressive Chips** for instant 1-tap testing:
-  - 🚀 *Startup Leap:* Quitting full-time employment for an AI venture.
-  - 🔄 *Codebase Rewrite:* Scrapping a legacy application for a new stack.
-  - 💰 *Pricing Pivot:* Killing the free tier to go paid-only.
-  - 🎓 *Career Bet:* Skipping campus placements for open-source contributions.
-
-### 2. Interactive MCQ Reality Calibration
-Before running the deep analysis, ReasonLens calibrates the real-world boundaries in 10 seconds:
-- **Reversibility (Stakes):** *Burn the boats* vs. *6–12 months recovery* vs. *Easily reversible*.
-- **Evidence Level (Proof):** *Gut instinct* vs. *Peer validation* vs. *Hard data & signed commitments*.
-- **Safety Margin (Buffer):** *Zero cushion* vs. *3–6 months* vs. *12+ months safety net*.
-
-### 3. Deep Decision Breakdown
-- **Clarity Meter (0–100):** Visual animated gauge with Type 1 (irreversible) vs. Type 2 (reversible) classification.
-- **Unstated Assumptions Matrix:** Identifies 3 implicit gambles rated `🔴 HIGH RISK`, `🟡 MED RISK`, or `🟢 MINOR RISK`, complete with a 1-click **⚡ 48h Stress-Test Drawer**.
-- **12-Month Reality Check Timeline:** A 3-stage post-decision failure forecast isolating the root catalyst.
-- **Tough Questions (Answerable Loop):** Three targeted reflection questions with interactive answer boxes that dynamically update your Clarity Score.
-
-### 4. Great Sage: The Multi-Turn Thinking Partner
-- A floating companion widget (`🔮 Great Sage • Online`) docked in the bottom-right corner.
-- Powered by a streaming multi-turn Gemini dialogue.
-- Acts as a serene, wise guide who respects your ambition, but asks the tough, grounding questions that friends are often afraid to ask.
-
----
-
-## 🎨 Google Labs & Antigravity Aesthetics
-
-- **Google 4-Color Ribbon:** The signature 2px Google brand gradient (`#4285F4`, `#EA4335`, `#FBBC05`, `#34A853`) across the top header.
-- **Ambient Gemini Aurora:** Multi-layered blurred ambient glows (Sapphire Blue, Royal Violet, Rose) on an elevated obsidian background (`#0B0E14`).
-- **Interactive Magnetic Dot Canvas:** An HTML5 canvas grid where background dots subtly gravitate toward your mouse pointer, inspired by the Google Antigravity homepage.
-- **Everyday Conversational Copy:** Zero academic or robotic jargon (`PARAM: CONTEXT`, `VEC-01`, and `INTERROGATE DECISION` have been replaced with clear, conversational English).
-- **1-Click Decision Memo:** Export your complete decision analysis as formatted Markdown or print directly to PDF.
-
----
-
-## 🛡️ Technical Architecture & Reliability
-
-- **Frontend:** React 18, TypeScript, Tailwind CSS 3.4, Lucide Icons, Vite.
-- **AI Engine:** Google Gemini API (`@google/generative-ai` & `@google/genai`) with strict JSON schema enforcement (`responseMimeType: "application/json"`).
-- **Zero-Downtime Dual-Mode Resilience:**
-  - `🟢 LIVE INFERENCE`: Direct streaming from Google Gemini.
-  - `🟡 DEMO MODE`: Client-side fail-safe simulation ensuring live hackathon presentations and offline evaluations never crash if Wi-Fi or API limits hit.
-- **Clean Architecture:** Fully decoupled components, custom streaming hooks, and zero monolithic files.
+- **Framework:** React 18, TypeScript, Vite
+- **Styling:** Tailwind CSS 3.4, Custom Obsidian Glass Design System, Lucide Icons
+- **AI Inference:** Google Gemini API via `@google/generative-ai` & `@google/genai`
+- **Schema Enforcement:** Strict JSON Schema generation (`responseMimeType: "application/json"`)
+- **Resilience:** Dual-Mode Engine:
+  - `🟢 LIVE INFERENCE`: Real-time streaming from Gemini with cascading model failovers.
+  - `🟡 DEMO MODE`: Client-side simulation ensuring live presentations never fail if offline.
 
 ---
 
@@ -111,7 +109,7 @@ Before running the deep analysis, ReasonLens calibrates the real-world boundarie
 - Node.js 18+ and npm installed
 - *(Optional)* A Gemini API Key from [Google AI Studio](https://aistudio.google.com/)
 
-### 1. Installation
+### 1. Clone & Install
 ```bash
 git clone https://github.com/crunchyrolll1810-cyber/Adityashambharkar_Promptwars.git
 cd Adityashambharkar_Promptwars
@@ -123,9 +121,9 @@ Create a `.env` file in the root directory:
 ```bash
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
-*(Note: If no API key is provided, ReasonLens automatically runs in Demo Mode with rich, full-featured simulation data).*
+*(If no API key is set, ReasonLens automatically runs in Demo Mode with rich realistic scenarios).*
 
-### 3. Launch Development Server
+### 3. Run Locally
 ```bash
 npm run dev
 ```
@@ -135,18 +133,20 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ```bash
 npm run build
 ```
-Generates an optimized, production-ready static bundle in the `dist/` directory ready for 1-click deployment on **Vercel** or **Netlify**.
+Creates an optimized, production-ready bundle in `dist/` ready to drag-and-drop onto **Netlify** or deploy on **Vercel**.
 
 ---
 
-## 🏆 PromptWars 2026 Submission Details
+## 🏆 PromptWars 2026 Submission
 
 - **Event:** PromptWars 2026 • SVPCET Nagpur
 - **Organizers:** Engineering India x Hack2Skill x Google for Developers
 - **Track:** AI Agents & Prompt Engineering
 - **Author:** Aditya Shambharkar
+- **Repository:** [Adityashambharkar_Promptwars](https://github.com/crunchyrolll1810-cyber/Adityashambharkar_Promptwars)
 
 ---
 
 ## 📄 License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
