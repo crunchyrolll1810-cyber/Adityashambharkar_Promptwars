@@ -30,8 +30,13 @@ export default {
         'waveform': 'waveform 1.2s ease-in-out infinite alternate',
         'radial-pulse': 'radialPulse 4s ease-in-out infinite',
         'slide-up-fade': 'slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'blur-fade': 'blurFadeIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both',
       },
       keyframes: {
+        blurFadeIn: {
+          '0%': { opacity: '0', filter: 'blur(12px)', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', filter: 'blur(0px)', transform: 'translateY(0)' },
+        },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(8px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },

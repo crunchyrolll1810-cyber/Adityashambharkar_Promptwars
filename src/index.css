@@ -82,6 +82,10 @@
     border-left: 2px solid #8B5CF6;
     padding-left: 0.75rem;
   }
+
+  .blur-fade-in {
+    animation: blurFadeIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
 }
 
 /* Custom Sleek Obsidian Scrollbar */
