@@ -15,55 +15,29 @@ export const MODEL_POOLS = {
 export const DEFAULT_MODEL = MODEL_POOLS.M1[0] // gemini-3.7-flash
 
 export interface GenerationRequest {
-  prompt?: string
-  decisionInput?: DecisionInput
-  imageBase64?: string
-  imageMimeType?: string
-  isDemoMode?: boolean
-  selectedModel?: string
-  onReset?: () => void
+  prompt?: string; decisionInput?: DecisionInput; imageBase64?: string; imageMimeType?: string
+  isDemoMode?: boolean; selectedModel?: string; onReset?: () => void
 }
 
 const SOCRATIC_SYSTEM_INSTRUCTION =
   'You are ReasonLens, a friendly and sharp Thinking Partner. Your job is to help users think clearly about their decisions without making the decision for them. Point out hidden assumptions in plain everyday English, highlight risks they might have overlooked, imagine how this could fail in 12 months, and ask 3 tough questions that help them think deeper.'
 
-export async function generateContentStream(
-  request: GenerationRequest,
-  onChunk: (token: string) => void
-): Promise<string> {
+export async function generateContentStream(request: GenerationRequest, onChunk: (token: string) => void): Promise<string> {
   const { prompt, decisionInput, imageBase64, imageMimeType, isDemoMode, selectedModel, onReset } = request
-
   const reqContext = decisionInput?.context || prompt || ''
 
-  if (isDemoMode) {
-    onReset?.()
-    return simulateStreamingResponse(onChunk, reqContext)
-  }
-
-  const apiKey =
-    (import.meta as any).env?.VITE_GEMINI_API_KEY ||
-    localStorage.getItem('GEMINI_API_KEY') ||
-    ''
-
-  if (!apiKey) {
-    console.warn('[ReasonLens] No API key found. Engaging Demo Mode.')
-    onReset?.()
-    return simulateStreamingResponse(onChunk, reqContext)
-  }
+  if (isDemoMode) { onReset?.(); return simulateStreamingResponse(onChunk, reqContext) }
+  const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || localStorage.getItem('GEMINI_API_KEY') || ''
+  if (!apiKey) { console.warn('[ReasonLens] No API key found. Engaging Demo Mode.'); onReset?.(); return simulateStreamingResponse(onChunk, reqContext) }
 
   const modelsToTry = selectedModel ? [selectedModel, ...MODEL_POOLS.M1] : MODEL_POOLS.M1
-
   for (const modelId of modelsToTry) {
     let chunksEmittedInThisAttempt = 0
     try {
       const genAI = new GoogleGenerativeAI(apiKey)
       const model = genAI.getGenerativeModel({
-        model: modelId,
-        systemInstruction: SOCRATIC_SYSTEM_INSTRUCTION,
-        generationConfig: {
-          responseMimeType: 'application/json',
-          responseSchema: DECISION_ANALYSIS_SCHEMA as any
-        }
+        model: modelId, systemInstruction: SOCRATIC_SYSTEM_INSTRUCTION,
+        generationConfig: { responseMimeType: 'application/json', responseSchema: DECISION_ANALYSIS_SCHEMA as any }
       })
 
       let userPrompt = decisionInput
