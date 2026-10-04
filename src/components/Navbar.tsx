@@ -39,6 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => onToggleDemoMode(!isDemoMode)}
+            aria-label={`Current mode: ${isDemoMode ? 'Demo Mode' : 'Live Gemini'}. Click to toggle mode.`}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-xl font-mono text-xs font-semibold border active:scale-[0.97] transition-all duration-150 ${
               isDemoMode
                 ? 'bg-amber-500/10 text-amber-300 border-amber-500/30 hover:bg-amber-500/20'
@@ -55,6 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
 
           <button
             onClick={() => setShowKeyModal(true)}
+            aria-label="Configure Gemini API Key"
             className="p-2 rounded-xl bg-slate-900/90 border border-white/10 text-slate-400 hover:text-white hover:border-violet-500/40 active:scale-[0.97] transition-all duration-150"
             title="Configure Gemini API Key"
           >
@@ -64,16 +66,19 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
       </header>
 
       {showKeyModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div role="dialog" aria-modal="true" aria-labelledby="api-key-modal-title" className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
           <div className="backdrop-blur-2xl bg-slate-900/90 max-w-md w-full p-6 rounded-2xl border border-white/10 shadow-2xl animate-fade-in">
             <div className="flex items-center gap-2 mb-3 text-white">
               <Sparkles className="h-5 w-5 text-violet-400" />
-              <h3 className="font-sans font-bold text-lg">Google AI Studio Credentials</h3>
+              <h3 id="api-key-modal-title" className="font-sans font-bold text-lg">Google AI Studio Credentials</h3>
             </div>
             <p className="font-sans text-xs text-slate-400 mb-4 leading-relaxed">
               Enter your Gemini API key from <a href="https://aistudio.google.com" target="_blank" rel="noreferrer" className="text-violet-400 underline">aistudio.google.com</a>. Stored locally in your browser session.
             </p>
+            <label htmlFor="gemini-api-key" className="sr-only">Gemini API Key</label>
             <input
+              id="gemini-api-key"
+              name="geminiApiKey"
               type="password"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
@@ -82,13 +87,17 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
             />
             <div className="flex justify-end gap-2">
               <button
+                type="button"
                 onClick={() => setShowKeyModal(false)}
+                aria-label="Cancel API key configuration"
                 className="font-mono px-4 py-2 text-xs text-slate-400 hover:text-white active:scale-[0.98] transition"
               >
                 CANCEL
               </button>
               <button
+                type="button"
                 onClick={handleSaveKey}
+                aria-label="Save Gemini API key"
                 className="font-mono px-4 py-2 text-xs font-semibold bg-violet-600 hover:bg-violet-500 text-white rounded-xl shadow-md shadow-violet-500/25 active:scale-[0.98] transition"
               >
                 SAVE KEY

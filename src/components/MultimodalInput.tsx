@@ -2,30 +2,32 @@ import React, { useRef, useState } from 'react'
 import { Image as ImageIcon, Send, X } from 'lucide-react'
 
 interface MultimodalInputProps {
-  context: string
-  onChangeContext: (val: string) => void
-  rationale: string
-  onChangeRationale: (val: string) => void
-  onSubmit: () => void
-  isLoading: boolean
+  context: string; onChangeContext: (val: string) => void
+  rationale: string; onChangeRationale: (val: string) => void
+  onSubmit: () => void; isLoading: boolean
   onImageSelected: (base64: string | undefined, mimeType: string | undefined) => void
 }
 
 export const MultimodalInput: React.FC<MultimodalInputProps> = ({
-  context,
-  onChangeContext,
-  rationale,
-  onChangeRationale,
-  onSubmit,
-  isLoading,
-  onImageSelected,
+  context, onChangeContext, rationale, onChangeRationale, onSubmit, isLoading, onImageSelected
 }) => {
   const [imagePreview, setImagePreview] = useState<string | null>(null)
+  const [fileError, setFileError] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) return
+    const allowed = ['image/png', 'image/jpeg', 'image/webp', 'image/gif']
+    if (!allowed.includes(file.type)) {
+      setFileError('Supported formats: PNG, JPEG, WebP, GIF')
+      return
+    }
+    if (file.size > 4 * 1024 * 1024) {
+      setFileError('Image size must be under 4MB')
+      return
+    }
+    setFileError(null)
     const reader = new FileReader()
     reader.onload = () => {
       const res = reader.result as string
@@ -37,8 +39,7 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && !isLoading && (context.trim() || rationale.trim())) {
-      e.preventDefault()
-      onSubmit()
+      e.preventDefault(); onSubmit()
     }
   }
 
@@ -53,21 +54,27 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
     >
       {imagePreview && (
         <div className="relative inline-block">
-          <img src={imagePreview} alt="Preview" className="h-20 w-20 object-cover rounded-2xl border border-indigo-500/30 shadow-md" />
+          <img src={imagePreview} alt="Uploaded Decision Context Preview" className="h-20 w-20 object-cover rounded-2xl border border-indigo-500/30 shadow-md" />
           <button
-            onClick={() => { setImagePreview(null); onImageSelected(undefined, undefined) }}
+            type="button"
+            aria-label="Remove uploaded image"
+            onClick={() => { setImagePreview(null); setFileError(null); onImageSelected(undefined, undefined) }}
             className="absolute -top-2 -right-2 p-1 rounded-full bg-slate-800 text-slate-300 hover:text-white border border-white/10"
           >
             <X className="h-3.5 w-3.5" />
           </button>
         </div>
       )}
+      {fileError && <p role="alert" className="text-xs text-rose-400 font-semibold">{fileError}</p>}
 
       <div className="space-y-2">
-        <label className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
+        <label htmlFor="decision-context" className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
           What decision are you thinking through?
         </label>
         <textarea
+          id="decision-context"
+          name="decisionContext"
+          maxLength={4000}
           value={context}
           onChange={(e) => onChangeContext(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -78,10 +85,13 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
       </div>
 
       <div className="space-y-2">
-        <label className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
+        <label htmlFor="decision-rationale" className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
           Why do you feel this is the right move?
         </label>
         <textarea
+          id="decision-rationale"
+          name="decisionRationale"
+          maxLength={4000}
           value={rationale}
           onChange={(e) => onChangeRationale(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -93,9 +103,10 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
 
       <div className="flex items-center justify-between pt-3 border-t border-white/5">
         <div className="flex items-center gap-2.5">
-          <input type="file" ref={fileInputRef} onChange={handleFileChange} accept="image/*" className="hidden" />
+          <input type="file" ref={fileInputRef} onChange={handleFileChange} accept="image/png,image/jpeg,image/webp,image/gif" className="hidden" aria-label="Upload context image file" />
           <button
             type="button"
+            aria-label="Add screenshot or sketch diagram"
             onClick={() => fileInputRef.current?.click()}
             className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs text-slate-300 hover:text-white hover:bg-white/5 border border-white/10 active:scale-[0.97] transition-all"
           >
@@ -107,6 +118,8 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
 
         <button
           onClick={onSubmit}
+          aria-label={isLoading ? 'Exploring with Gemini...' : 'Explore My Assumptions ✨'}
+          aria-busy={isLoading}
           disabled={isLoading || (!context.trim() && !rationale.trim())}
           className={`relative flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-indigo-500/25 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97] transition-all group ${isLoading ? 'ring-2 ring-violet-500/80 ring-offset-2 ring-offset-[#090D16] animate-pulse' : ''}`}
         >
