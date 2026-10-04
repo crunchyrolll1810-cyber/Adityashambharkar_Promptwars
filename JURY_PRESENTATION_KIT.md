@@ -41,7 +41,7 @@
 
 ### [2:00 – 2:30] The Architecture & Antigravity Workflow
 > *"Under the hood, we architected ReasonLens using **Google Antigravity** following strict Clean Architecture:*
-> 1. **Zero Monolithic Bloat:** Every single React component and TypeScript service is enforced under 150 lines of code.
+> 1. **Modular Architecture:** Clean separation of concerns with package-by-feature structure and single-responsibility components.
 > 2. **Deterministic Gemini JSON Extraction:** We configured **Gemini 2.5 Flash** with `responseMimeType: application/json` bound to a strict structured schema.
 > 3. **Defensive Dual-Mode Resilience:** College Wi-Fi and API rate limits ruin hackathon demos. We built a zero-downtime **[🟢 Live API | 🟡 Demo Mode]** toggle. If network latency exceeds threshold, our client-side fail-safe takes over seamlessly with realistic, scenario-tailored Socratic mocks."*
 
@@ -67,7 +67,7 @@
 ### Solution Overview (1-2 Paragraphs)
 > **ReasonLens** is an intelligent Socratic companion designed to stress-test human reasoning without making decisions for the user. By isolating Decision Context from Proposed Rationale, ReasonLens leverages Gemini 2.5 Flash with structured JSON schemas to extract unmasked assumptions, assign vulnerability ratings (`HIGH`, `MED`, `LOW`), simulate prospective 12-month pre-mortem failure scenarios, and formulate piercing Socratic inquiries that challenge blind spots.
 > 
-> Built in Google Antigravity following Clean Architecture, ReasonLens enforces strict modular separation (<150 lines per file), frosted glassmorphism, tactile keyboard ergonomics (`Ctrl+Enter`), and a defensive dual-mode architecture that guarantees zero-downtime presentations through local mock fallbacks.
+> Built in Google Antigravity following Clean Architecture, ReasonLens enforces clean modular separation, frosted glassmorphism, tactile keyboard ergonomics (`Ctrl+Enter`), and a defensive dual-mode architecture that guarantees zero-downtime presentations through local mock fallbacks.
 
 ### Prompt Strategy & Antigravity Narrative (Judges Love This!)
 > *"Our development methodology centered on a 4-tier strategic filter executed autonomously in Google Antigravity:
@@ -92,7 +92,7 @@ ReasonLens is a Socratic Thinking Companion powered by Gemini 2.5 Flash that:
 ❓ Asks 3 piercing Socratic questions to challenge confirmation bias
 🛡️ Enforces the Non-Decision Pledge: We stress-test your logic so YOU decide with conviction.
 
-Built using Google Antigravity following Clean Architecture (<150 lines/file), frosted glassmorphic UI, and real-time streaming with dual-mode fail-safes.
+Built using Google Antigravity following Clean Architecture, frosted glassmorphic UI, and real-time streaming with dual-mode fail-safes.
 
 Proud of what our team shipped in just 3 hours! ⚡
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Sparkles, Key, ShieldCheck, Compass, Activity } from 'lucide-react'
+import { Sparkles, Key, ShieldCheck, FlaskConical } from 'lucide-react'
 
 interface NavbarProps {
   isDemoMode: boolean
@@ -17,47 +17,45 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
 
   return (
     <>
-      <header className="sticky top-0 z-50 px-4 sm:px-6 py-3 backdrop-blur-2xl bg-[#090D16]/80 border-b border-white/10 flex items-center justify-between">
+      {/* Google 4-Color Top Ribbon */}
+      <div className="w-full h-[2.5px] google-ribbon sticky top-0 z-50 shadow-sm" />
+
+      <header className="sticky top-[2.5px] z-40 px-4 sm:px-6 py-3 backdrop-blur-2xl bg-[#0B0E14]/85 border-b border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-violet-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-violet-500/20 border border-white/10">
-            <Compass className="h-5 w-5 text-white" />
+          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20 border border-white/15">
+            <FlaskConical className="h-5 w-5 text-white" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span className="font-sans font-bold tracking-tight text-white text-base sm:text-lg">ReasonLens</span>
-              <span className="font-mono text-[10px] tracking-widest px-2 py-0.5 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/30">
-                LABS.EXP-01
+              <span className="font-sans text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/25">
+                Google Labs • Decision Experiment #01
               </span>
             </div>
-            <p className="font-mono text-[11px] text-slate-400 hidden sm:block">Google Labs • Socratic Decision Interrogation</p>
+            <p className="text-xs text-slate-400 hidden sm:block">Test assumptions and spot blind spots before committing</p>
           </div>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-lg bg-slate-900/80 border border-white/10 font-mono text-[11px]">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="text-slate-300">GEMINI-2.5-FLASH</span>
-          </div>
-
           <button
             onClick={() => onToggleDemoMode(!isDemoMode)}
-            className={`font-mono flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border active:scale-[0.98] transition-all duration-150 ${
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium border active:scale-[0.98] transition-all duration-150 ${
               isDemoMode
                 ? 'bg-amber-500/10 text-amber-300 border-amber-500/30 hover:bg-amber-500/20'
-                : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30 hover:bg-emerald-500/20'
+                : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30 hover:bg-emerald-500/20 shadow-sm'
             }`}
-            title="Toggle between Live API and fail-safe offline Mock Data"
+            title="Toggle between Live API and offline demo scenarios"
           >
-            <ShieldCheck className="h-3.5 w-3.5" />
-            <span>{isDemoMode ? '🟡 DEMO MODE' : '🟢 LIVE INFERENCE'}</span>
+            <span className="relative flex h-2 w-2">
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isDemoMode ? 'bg-amber-400' : 'bg-emerald-400'}`}></span>
+              <span className={`relative inline-flex rounded-full h-2 w-2 ${isDemoMode ? 'bg-amber-500' : 'bg-emerald-500'}`}></span>
+            </span>
+            <span>{isDemoMode ? 'Demo Mode' : 'Gemini 2.5 Flash • Live Inference'}</span>
           </button>
 
           <button
             onClick={() => setShowKeyModal(true)}
-            className="p-2 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-violet-500/40 active:scale-[0.98] transition-all duration-150"
+            className="p-2 rounded-xl bg-slate-900/90 border border-white/10 text-slate-400 hover:text-white hover:border-indigo-500/40 active:scale-[0.98] transition-all duration-150"
             title="Configure Gemini API Key"
           >
             <Key className="h-4 w-4" />

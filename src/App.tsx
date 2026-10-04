@@ -53,21 +53,22 @@ export function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#090D16] bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] text-slate-100 flex flex-col relative overflow-x-hidden selection:bg-violet-500/30 selection:text-violet-100">
-      {/* Ambient Radial Background Accents */}
-      <div className="fixed top-0 left-1/4 w-80 sm:w-96 h-80 sm:h-96 bg-violet-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="fixed bottom-10 right-1/4 w-80 sm:w-96 h-80 sm:h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+    <div className="min-h-screen bg-[#0B0E14] text-slate-100 flex flex-col relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-100">
+      {/* Soft Ambient Gemini Aurora Mesh Glows */}
+      <div className="fixed -top-24 left-1/4 w-[500px] h-[500px] bg-blue-600/12 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="fixed top-1/3 -right-20 w-[450px] h-[450px] bg-purple-600/12 rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="fixed -bottom-24 left-1/3 w-[500px] h-[500px] bg-rose-600/[0.08] rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Top Navbar */}
       <Navbar isDemoMode={isDemoMode} onToggleDemoMode={setIsDemoMode} />
 
-      {/* Main Bento Container */}
+      {/* Main Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Dynamic Header */}
         <div className="mb-6 text-center sm:text-left">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-500/10 text-violet-300 text-xs font-mono font-medium border border-violet-500/20 mb-3 shadow-sm">
-            <Sparkles className="h-3.5 w-3.5 text-violet-400" />
-            <span className="tracking-wide">LABS // AI THINKING PARTNER</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20 mb-3 shadow-sm">
+            <Sparkles className="h-3.5 w-3.5 text-blue-400" />
+            <span>Google Labs • AI Thinking Partner</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
             ReasonLens
@@ -80,7 +81,7 @@ export function App() {
         {/* 1-Tap Presets */}
         <QuickScenarioChips onSelectScenario={handleSelectScenario} />
 
-        {/* Multimodal Interrogation Input */}
+        {/* Multimodal Input */}
         <MultimodalInput
           context={context}
           onChangeContext={setContext}
@@ -88,10 +89,7 @@ export function App() {
           onChangeRationale={setRationale}
           onSubmit={() => handleExecute()}
           isLoading={isGenerating}
-          onImageSelected={(b64, mime) => {
-            setImageBase64(b64)
-            setImageMimeType(mime)
-          }}
+          onImageSelected={(b64, mime) => { setImageBase64(b64); setImageMimeType(mime) }}
         />
 
         {/* Tab Controls */}
@@ -99,25 +97,25 @@ export function App() {
           <div className="flex items-center gap-2 mb-3">
             <button
               onClick={() => setActiveTab('dashboard')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-semibold active:scale-[0.98] transition-all duration-150 ${
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold active:scale-[0.98] transition-all duration-150 ${
                 activeTab === 'dashboard'
-                  ? 'bg-violet-600 text-white shadow-md shadow-violet-500/25 border border-violet-500/40'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-white/10'
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-indigo-500/25'
+                  : 'bg-[#161922] text-slate-400 hover:text-white border border-white/10'
               }`}
             >
               <Eye className="h-3.5 w-3.5" />
-              <span>DECISION BREAKDOWN</span>
+              <span>Decision Breakdown</span>
             </button>
             <button
               onClick={() => setActiveTab('stream')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-semibold active:scale-[0.98] transition-all duration-150 ${
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold active:scale-[0.98] transition-all duration-150 ${
                 activeTab === 'stream'
-                  ? 'bg-violet-600 text-white shadow-md shadow-violet-500/25 border border-violet-500/40'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-white/10'
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-indigo-500/25'
+                  : 'bg-[#161922] text-slate-400 hover:text-white border border-white/10'
               }`}
             >
               <Code className="h-3.5 w-3.5" />
-              <span>RAW JSON</span>
+              <span>Raw JSON Output</span>
             </button>
           </div>
         )}
@@ -139,8 +137,8 @@ export function App() {
       </main>
 
       {/* Footer */}
-      <footer className="py-4 text-center text-xs font-mono text-slate-500 border-t border-white/5">
-        PromptWars 2026 • SVPCET Nagpur • Engineering India x Hack2Skill x Google for Developers
+      <footer className="py-4 text-center text-xs text-slate-500 border-t border-white/5">
+        Google Labs Experiment • PromptWars 2026 • SVPCET Nagpur • Engineering India x Hack2Skill x Google for Developers
       </footer>
     </div>
   )

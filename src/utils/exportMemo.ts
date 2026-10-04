@@ -1,12 +1,12 @@
 import { DecisionAnalysis } from '../types/decision.types'
 
-export function exportDecisionMemo(
+export function generateMemoText(
   analysis: DecisionAnalysis,
   context?: string,
   rationale?: string
-) {
+): string {
   const dateStr = new Date().toISOString().split('T')[0]
-  const content = `# 🧭 ReasonLens: Decision Review Memo
+  return `# 🧭 ReasonLens: Decision Review Memo
 **Your AI Thinking Partner**
 *Generated: ${dateStr} • Powered by Gemini 2.5 Flash & Google Antigravity*
 
@@ -56,7 +56,15 @@ ${analysis.socraticQuestions
 ---
 *Created with ReasonLens • Your AI Thinking Partner*
 `
+}
 
+export function exportDecisionMemo(
+  analysis: DecisionAnalysis,
+  context?: string,
+  rationale?: string
+) {
+  const dateStr = new Date().toISOString().split('T')[0]
+  const content = generateMemoText(analysis, context, rationale)
   const blob = new Blob([content], { type: 'text/markdown;charset=utf-8;' })
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')

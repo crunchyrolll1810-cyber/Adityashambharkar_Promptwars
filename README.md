@@ -33,15 +33,15 @@ graph TD
     D --> F["Streaming Card (Typewriter Stream)"]
     E --> F
     F --> G["DecisionDashboard.tsx"]
-    G --> H1["Clarity Score & Non-Decision Pledge"]
-    G --> H2["Unstated Assumptions Grid"]
-    G --> H3["12-Month Pre-Mortem Failure Card"]
-    G --> H4["Socratic Inquiry Cards"]
+    G --> H1["Clarity Score & We Never Decide For You"]
+    G --> H2["Things You Might Be Assuming"]
+    G --> H3["What Could Go Wrong? (12-Month Reality Check)"]
+    G --> H4["Tough Questions To Ask Yourself"]
 ```
 
 ### Architectural Principles Enforced:
 - **Package-by-Feature Scaffolding:** Presentation is decoupled from inference logic.
-- **Strict File-Size Caps:** All components and service modules are maintained strictly under 150 lines.
+- **Clean Modularity:** Logical separation of concerns across components, hooks, and services.
 - **Vibe Layer:** Frosted glassmorphism (`backdrop-blur-xl`), tactile button compression (`active:scale-[0.98]`), and ambient gradient backdrops.
 
 ---

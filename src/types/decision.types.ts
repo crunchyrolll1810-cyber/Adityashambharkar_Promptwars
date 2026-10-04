@@ -1,7 +1,6 @@
 /**
  * ReasonLens: Domain Data Models & Gemini Schema
  * Package: src/types/decision.types.ts
- * Enforces Creative Code Architect strict <150 lines rule.
  */
 
 export type VulnerabilityLevel = 'LOW' | 'MED' | 'HIGH';
