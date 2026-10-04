@@ -25,7 +25,7 @@ export const DecisionDashboard: React.FC<Props> = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 animate-fade-in">
       {/* Overview & Promise [EXP 01] */}
-      <div className="md:col-span-8 rounded-3xl p-6 sm:p-8 bg-[#161922]/85 border border-white/10 shadow-2xl flex flex-col justify-between space-y-4 hover:border-violet-500/30 hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] hover:-translate-y-1 transition-all duration-300">
+      <div className="spotlight-card md:col-span-8 rounded-3xl p-6 sm:p-8 bg-[#161922]/85 border border-white/10 shadow-2xl flex flex-col justify-between space-y-4 hover:border-violet-500/30 hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] hover:-translate-y-1 transition-all duration-300">
         <div>
           <div className="flex items-center justify-between mb-3 border-b border-white/5 pb-2 text-xs">
             <span className="font-bold text-slate-200 flex items-center gap-1.5 uppercase tracking-wider accent-bar-violet">
@@ -54,8 +54,23 @@ export const DecisionDashboard: React.FC<Props> = ({
         rationale={rationale}
       />
 
+      {/* Blind Spot Risk Alert Chips [Widget B] */}
+      {analysis.blindSpotRisks && analysis.blindSpotRisks.length > 0 && (
+        <div className="col-span-12 flex flex-wrap items-center gap-2 px-1 py-0.5">
+          <span className="font-mono text-[11px] text-amber-400 font-bold uppercase tracking-wider flex items-center gap-1.5 mr-1">
+            <span>⚡ Blind Spot Alerts:</span>
+          </span>
+          {analysis.blindSpotRisks.map((bs, i) => (
+            <div key={i} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-200 text-xs font-medium shadow-sm">
+              <span className="font-mono text-[10px] text-amber-400 font-bold uppercase">{bs.impactArea}:</span>
+              <span>{bs.risk}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Assumptions Matrix [EXP 02] */}
-      <div className="col-span-12 rounded-3xl p-6 sm:p-8 bg-[#161922]/85 border border-white/10 shadow-2xl space-y-4 hover:border-amber-500/30 hover:shadow-[0_20px_50px_-10px_rgba(245,158,11,0.12)] transition-all duration-300">
+      <div className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-[#161922]/85 border border-white/10 shadow-2xl space-y-4 hover:border-amber-500/30 hover:shadow-[0_20px_50px_-10px_rgba(245,158,11,0.12)] transition-all duration-300">
         <div className="flex items-center justify-between border-b border-white/5 pb-3 text-xs">
           <span className="font-bold uppercase tracking-wider text-slate-200 accent-bar-violet">
             Things You Might Be Taking For Granted ({analysis.unstatedAssumptions.length})
@@ -96,7 +111,7 @@ export const DecisionDashboard: React.FC<Props> = ({
       </div>
 
       {/* 12-Month Reality Check Timeline [EXP 03] */}
-      <div className="col-span-12 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-rose-950/20 to-[#161922]/85 border border-rose-500/25 shadow-2xl space-y-4 hover:border-rose-500/50 hover:shadow-[0_20px_50px_-10px_rgba(244,63,94,0.15)] transition-all duration-300">
+      <div className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-rose-950/20 to-[#161922]/85 border border-rose-500/25 shadow-2xl space-y-4 hover:border-rose-500/50 hover:shadow-[0_20px_50px_-10px_rgba(244,63,94,0.15)] transition-all duration-300">
         <div className="flex items-center justify-between border-b border-rose-500/20 pb-3 text-xs text-rose-300">
           <span className="font-bold uppercase tracking-wider flex items-center gap-1.5 border-l-2 border-rose-500 pl-3">
             <AlertTriangle className="h-4 w-4" /> 12-Month Reality Check Timeline

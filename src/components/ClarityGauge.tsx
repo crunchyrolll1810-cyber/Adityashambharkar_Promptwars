@@ -43,7 +43,7 @@ export const ClarityGauge: React.FC<Props> = ({
   }
 
   return (
-    <div className="md:col-span-4 rounded-3xl p-6 sm:p-7 bg-[#161922]/85 border border-white/10 shadow-2xl flex flex-col justify-between space-y-4 hover:border-violet-500/30 hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] hover:-translate-y-1 transition-all duration-300">
+    <div className="spotlight-card md:col-span-4 rounded-3xl p-6 sm:p-7 bg-[#161922]/85 border border-white/10 shadow-2xl flex flex-col justify-between space-y-4 hover:border-violet-500/30 hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] hover:-translate-y-1 transition-all duration-300">
       <div className="flex items-center justify-between border-b border-white/5 pb-2">
         <span className="font-mono text-[10px] text-slate-500 font-semibold">[GAUGE 01]</span>
         <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">Confidence Metric</span>

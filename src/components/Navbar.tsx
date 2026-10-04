@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
 
       <header className="sticky top-[2.5px] z-40 px-4 sm:px-6 py-3 backdrop-blur-2xl bg-[#090D16]/90 border-b border-violet-500/15 shadow-[0_4px_20px_rgba(139,92,246,0.06)] flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 border border-white/20 group cursor-pointer">
+          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 border border-white/20 group cursor-pointer hover:rotate-12 active:scale-95 transition-all duration-300">
             <FlaskConical className="h-5 w-5 text-white group-hover:rotate-45 transition-transform duration-300" />
           </div>
           <div>

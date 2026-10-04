@@ -40,7 +40,7 @@ export const CalibrationCard: React.FC<CalibrationCardProps> = ({
   }
 
   return (
-    <div className="rounded-2xl p-6 sm:p-7 bg-[#161922]/90 border border-white/10 shadow-2xl space-y-6 mb-8 animate-fade-in">
+    <div className="spotlight-card rounded-3xl p-6 sm:p-7 bg-[#161922]/90 border border-white/10 shadow-2xl space-y-6 mb-8 animate-fade-in hover:border-violet-500/30 hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] transition-all duration-300">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/5 pb-4">
         <div>

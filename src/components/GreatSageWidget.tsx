@@ -65,7 +65,7 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
     return (
       <div
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-5 right-5 z-50 flex items-center gap-3 px-4 py-3 rounded-full backdrop-blur-2xl bg-[#161922]/95 border border-purple-500/40 hover:border-purple-400 shadow-2xl hover:shadow-purple-500/25 active:scale-[0.97] transition-all cursor-pointer group"
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-3 px-4 py-3 rounded-full backdrop-blur-2xl bg-[#161922]/95 border border-purple-500/40 hover:border-purple-400 shadow-2xl hover:shadow-purple-500/25 active:scale-[0.97] transition-all cursor-pointer group animate-slide-up-fade"
       >
         <div className="relative flex items-center justify-center h-8 w-8 rounded-full bg-purple-600/30 border border-purple-400/40 text-base shadow-inner">
           <span>🔮</span>
@@ -84,7 +84,7 @@ export const GreatSageWidget: React.FC<Props> = ({ analysis, context, rationale,
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 w-[92vw] sm:w-[420px] h-[520px] max-h-[85vh] flex flex-col rounded-3xl backdrop-blur-2xl bg-[#161922]/95 border border-purple-500/40 shadow-2xl animate-fade-in overflow-hidden">
+    <div className="fixed bottom-5 right-5 z-50 w-[92vw] sm:w-[420px] h-[520px] max-h-[85vh] flex flex-col rounded-3xl backdrop-blur-2xl bg-[#161922]/95 border border-purple-500/40 shadow-2xl animate-slide-up-fade overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-[#0B0E14]/60">
         <div className="flex items-center gap-2.5">

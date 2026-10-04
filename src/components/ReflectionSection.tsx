@@ -26,11 +26,11 @@ export const ReflectionSection: React.FC<Props> = ({
   ]
 
   return (
-    <div className="col-span-12 rounded-3xl p-6 sm:p-8 bg-[#161922]/85 border border-white/10 shadow-2xl space-y-5 hover:border-white/20 transition-all">
+    <div className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-[#161922]/85 border border-white/10 shadow-2xl space-y-5 hover:border-violet-500/30 hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] transition-all duration-300">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-3">
-        <div className="flex items-center gap-2 text-indigo-300">
+        <div className="flex items-center gap-2 text-violet-300">
           <HelpCircle className="h-4 w-4" />
-          <h3 className="text-xs font-bold uppercase tracking-wider text-white">Tough Questions from Great Sage</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-white accent-bar-violet">Tough Questions from Great Sage</h3>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold flex items-center gap-1.5 shadow-sm">
@@ -45,11 +45,11 @@ export const ReflectionSection: React.FC<Props> = ({
         {questions.map((q, idx) => {
           const currentAnswer = reflections[idx] || ''
           return (
-            <div key={idx} className="rounded-2xl p-4 sm:p-5 bg-[#0B0E14]/85 border border-white/10 hover:border-indigo-500/40 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between space-y-3.5 shadow-md">
+            <div key={idx} className="rounded-2xl p-4 sm:p-5 bg-[#0B0E14]/85 border border-white/10 hover:border-violet-500/40 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between space-y-3.5 shadow-md">
               <div className="space-y-2">
-                <div className="flex items-center justify-between text-xs text-indigo-300">
-                  <span className="font-bold">Question #{idx + 1}</span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-[10px] font-semibold">{q.reasoningAngle}</span>
+                <div className="flex items-center justify-between text-xs text-violet-300">
+                  <span className="font-bold font-mono">#{idx + 1}</span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-[10px] font-semibold">{q.reasoningAngle}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-100 font-semibold leading-relaxed">"{q.question}"</p>
               </div>
@@ -60,7 +60,7 @@ export const ReflectionSection: React.FC<Props> = ({
                   onChange={(e) => onChangeReflection(idx, e.target.value)}
                   placeholder="Type your honest response or plan..."
                   rows={3}
-                  className="w-full bg-[#161922] border border-white/10 rounded-2xl px-3.5 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/60 resize-none transition"
+                  className="w-full bg-[#161922] border border-white/10 rounded-2xl px-3.5 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus-glow focus:outline-none resize-none transition"
                 />
 
                 <div className="flex flex-wrap gap-1.5">
