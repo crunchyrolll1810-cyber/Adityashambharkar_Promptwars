@@ -145,3 +145,4 @@ export function parseDecisionAnalysis(raw: string): DecisionAnalysis | null {
 }
 
 export { MOCK_REASONLENS_ANALYSIS }
+export { streamDebateMessage } from './debateService'

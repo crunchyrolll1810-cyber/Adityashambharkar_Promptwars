@@ -4,8 +4,9 @@ import { QuickScenarioChips } from './components/QuickScenarioChips'
 import { MultimodalInput } from './components/MultimodalInput'
 import { StreamingCard } from './components/StreamingCard'
 import { DecisionDashboard } from './components/DecisionDashboard'
+import { WiseDebatePanel } from './components/WiseDebatePanel'
 import { generateContentStream, parseDecisionAnalysis } from './services/geminiService'
-import { Sparkles, Eye, Code } from 'lucide-react'
+import { Sparkles, Eye, Code, MessageCircle } from 'lucide-react'
 
 export function App() {
   const [context, setContext] = useState('')
@@ -15,14 +16,12 @@ export function App() {
   const [outputContent, setOutputContent] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
   const [isDemoMode, setIsDemoMode] = useState(false)
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'stream'>('dashboard')
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'debate' | 'stream'>('dashboard')
 
   const parsedAnalysis = useMemo(() => parseDecisionAnalysis(outputContent), [outputContent])
 
-  const handleSelectScenario = (selectedContext: string, selectedRationale: string) => {
-    setContext(selectedContext)
-    setRationale(selectedRationale)
-    handleExecute(selectedContext, selectedRationale)
+  const handleSelectScenario = (selContext: string, selRationale: string) => {
+    setContext(selContext); setRationale(selRationale); handleExecute(selContext, selRationale)
   }
 
   const handleExecute = async (overrideContext?: string, overrideRationale?: string) => {
@@ -41,9 +40,7 @@ export function App() {
           imageMimeType,
           isDemoMode
         },
-        (token) => {
-          setOutputContent((prev) => prev + token)
-        }
+        (token) => setOutputContent((prev) => prev + token)
       )
     } catch (err) {
       console.error('Execution error:', err)
@@ -70,9 +67,7 @@ export function App() {
             <Sparkles className="h-3.5 w-3.5 text-blue-400" />
             <span>Google Labs • AI Thinking Partner</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
-            ReasonLens
-          </h1>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">ReasonLens</h1>
           <p className="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
             Spot what you might be missing, test your assumptions, and make confident decisions.
           </p>
@@ -94,7 +89,7 @@ export function App() {
 
         {/* Tab Controls */}
         {parsedAnalysis && (
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex flex-wrap items-center gap-2 mb-4">
             <button
               onClick={() => setActiveTab('dashboard')}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold active:scale-[0.98] transition-all duration-150 ${
@@ -105,6 +100,17 @@ export function App() {
             >
               <Eye className="h-3.5 w-3.5" />
               <span>Decision Breakdown</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('debate')}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold active:scale-[0.98] transition-all duration-150 ${
+                activeTab === 'debate'
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-indigo-500/25'
+                  : 'bg-[#161922] text-slate-400 hover:text-white border border-white/10'
+              }`}
+            >
+              <MessageCircle className="h-3.5 w-3.5 text-indigo-400" />
+              <span>Wise Partner Chat ✨</span>
             </button>
             <button
               onClick={() => setActiveTab('stream')}
@@ -121,18 +127,14 @@ export function App() {
         )}
 
         {/* Content View */}
-        {parsedAnalysis && activeTab === 'dashboard' ? (
-          <DecisionDashboard
-            analysis={parsedAnalysis}
-            context={context}
-            rationale={rationale}
-          />
-        ) : (
-          <StreamingCard
-            content={outputContent}
-            isStreaming={isGenerating}
-            isDemoMode={isDemoMode}
-          />
+        {parsedAnalysis && activeTab === 'dashboard' && (
+          <DecisionDashboard analysis={parsedAnalysis} context={context} rationale={rationale} />
+        )}
+        {parsedAnalysis && activeTab === 'debate' && (
+          <WiseDebatePanel analysis={parsedAnalysis} context={context} rationale={rationale} isDemoMode={isDemoMode} />
+        )}
+        {(activeTab === 'stream' || (!parsedAnalysis && outputContent)) && (
+          <StreamingCard content={outputContent} isStreaming={isGenerating} isDemoMode={isDemoMode} />
         )}
       </main>
 

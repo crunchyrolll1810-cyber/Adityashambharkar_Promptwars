@@ -48,6 +48,12 @@ export interface DecisionAnalysis {
   nonDecisionPledge: string;
 }
 
+export interface ChatMessage {
+  id: string;
+  sender: 'user' | 'mentor';
+  text: string;
+}
+
 /**
  * Structured response schema for Gemini generation.
  * Guarantees deterministic, type-safe JSON extraction.
