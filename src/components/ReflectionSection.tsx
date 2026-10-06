@@ -26,18 +26,18 @@ export const ReflectionSection: React.FC<Props> = ({
   ]
 
   return (
-    <div className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-[#12141C]/90 border border-white/10 shadow-2xl space-y-5 hover:border-volt/30 transition-all duration-300">
+    <div data-reveal className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-[#12141C]/90 border border-white/10 shadow-2xl space-y-5 hover:border-volt/30 transition-all duration-300">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-3">
         <div className="flex items-center gap-2 text-volt">
           <HelpCircle className="h-4 w-4 text-volt" />
-          <h3 className="text-xs font-black uppercase tracking-wider text-white accent-bar-volt">Pit-Wall Debrief Questions</h3>
+          <h3 className="text-xs font-black uppercase tracking-wider text-white accent-bar-volt">Reflection Questions</h3>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xs px-3 py-1 rounded-full bg-volt/10 border border-volt/30 text-volt font-bold flex items-center gap-1.5 shadow-sm">
             <CheckCircle2 className="h-3.5 w-3.5 text-volt" />
             <span>{answeredCount} of {questions.length} Answered</span>
           </span>
-          <span className="text-xs text-slate-400 hidden sm:inline">Answer to earn +15% Delta Boost</span>
+          <span className="text-xs text-slate-400 hidden sm:inline">Answer to earn +15% Clarity Boost</span>
         </div>
       </div>
 

@@ -24,8 +24,8 @@ export const DecisionDashboard: React.FC<Props> = ({
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 animate-fade-in">
-      {/* Race Debrief & Promise [EXP 01] */}
-      <div className="spotlight-card md:col-span-8 rounded-3xl p-6 sm:p-8 bg-[#12141C]/90 border border-white/10 shadow-2xl flex flex-col justify-between space-y-4 hover:border-volt/40 hover:shadow-[0_20px_50px_-10px_rgba(210,255,0,0.12)] hover:-translate-y-1 transition-all duration-300">
+      {/* Decision Breakdown [01] */}
+      <div data-reveal className="spotlight-card md:col-span-8 rounded-3xl p-6 sm:p-8 bg-[#12141C]/90 border border-white/10 shadow-2xl flex flex-col justify-between space-y-4 hover:border-volt/40 hover:shadow-[0_20px_50px_-10px_rgba(210,255,0,0.12)] hover:-translate-y-1 transition-all duration-300">
         <div>
           <div className="flex items-center justify-between mb-3 border-b border-white/5 pb-2 text-xs">
             <span className="font-black text-slate-200 flex items-center gap-1.5 uppercase tracking-wider accent-bar-volt">
@@ -33,14 +33,14 @@ export const DecisionDashboard: React.FC<Props> = ({
             </span>
             <div className="flex items-center gap-2">
               <span className="font-mono text-[10px] text-volt font-bold">[EXP 01]</span>
-              <span className="text-xs text-volt font-mono font-bold shadow-[0_0_8px_rgba(210,255,0,0.3)]">● LIVE TELEMETRY</span>
+              <span className="text-xs text-volt font-mono font-bold">● LIVE</span>
             </div>
           </div>
           <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-sans">{analysis.summary}</p>
         </div>
         <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-volt/10 border border-volt/25 text-volt text-xs font-medium">
           <ShieldCheck className="h-4 w-4 shrink-0 text-volt" />
-          <span>Our Promise: ReasonLens never decides for you. We stress-test your racing line so you decide with conviction.</span>
+          <span>Our Promise: ReasonLens never decides for you. We stress-test your logic so you decide with conviction.</span>
         </div>
       </div>
 
@@ -48,7 +48,7 @@ export const DecisionDashboard: React.FC<Props> = ({
 
       {/* Blind Spot Risk Alert Chips */}
       {analysis.blindSpotRisks && analysis.blindSpotRisks.length > 0 && (
-        <div className="col-span-12 flex flex-wrap items-center gap-2 px-1 py-0.5">
+        <div className="col-span-12 flex flex-wrap items-center gap-2 px-1 py-0.5" data-reveal>
           <span className="font-mono text-[11px] text-papaya font-bold uppercase tracking-wider flex items-center gap-1.5 mr-1">
             <span>⚡ Blind Spot Alerts:</span>
           </span>
@@ -61,8 +61,8 @@ export const DecisionDashboard: React.FC<Props> = ({
         </div>
       )}
 
-      {/* Assumptions Matrix [EXP 02] */}
-      <div className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-[#12141C]/90 border border-white/10 shadow-2xl space-y-4 hover:border-volt/30 transition-all duration-300">
+      {/* Assumptions Matrix [02] */}
+      <div data-reveal className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-[#12141C]/90 border border-white/10 shadow-2xl space-y-4 hover:border-volt/30 transition-all duration-300">
         <div className="flex items-center justify-between border-b border-white/5 pb-3 text-xs">
           <span className="font-black uppercase tracking-wider text-slate-200 accent-bar-volt">
             Things You Might Be Taking For Granted ({analysis.unstatedAssumptions.length})
@@ -103,7 +103,7 @@ export const DecisionDashboard: React.FC<Props> = ({
       </div>
 
       {/* 12-Month Pre-Mortem Timeline [EXP 03] */}
-      <div className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-rose-950/20 to-[#12141C]/95 border border-rose-500/25 shadow-2xl space-y-4 hover:border-rose-500/50 transition-all duration-300">
+      <div data-reveal className="spotlight-card col-span-12 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-rose-950/20 to-[#12141C]/95 border border-rose-500/25 shadow-2xl space-y-4 hover:border-rose-500/50 transition-all duration-300">
         <div className="flex items-center justify-between border-b border-rose-500/20 pb-3 text-xs text-rose-300">
           <span className="font-black uppercase tracking-wider flex items-center gap-1.5 border-l-2 border-rose-500 pl-3">
             <AlertTriangle className="h-4 w-4" /> 12-Month Reality Check Timeline

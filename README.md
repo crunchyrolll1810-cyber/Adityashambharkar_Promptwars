@@ -71,14 +71,14 @@ To ensure zero monolithic bloat and absolute maintainability, every single file 
 - Separated services into clean single-responsibility modules (`geminiService.ts`, `debateService.ts`, `reEvaluationService.ts`).
 - **Result:** 100% of all 22 source and style files strictly comply with the rule.
 
-### 4. Lando Norris F1 Telemetry & Antigravity Visual Identity
-- **🏎️ Lando Norris F1 Motorsport Palette:** Electric Neon Volt (`#D2FF00`), McLaren Papaya (`#FF8000`), and Carbon Stealth (`#08090C`), inspired by [landonorris.com](https://landonorris.com/) (Awwwards Site of the Day by OFF+BRAND).
-- **Interactive Magnetic Dot Canvas (`InteractiveDotGrid.tsx`):** A custom 60fps HTML5 canvas dot matrix where dots within a 140px radius gently pull toward the cursor with spring dampening physics and illuminate in electric volt.
-- **F1 Telemetry Marquee Ticker Tape:** Live real-time scrolling telemetry HUD featuring sector splits, tire compound status, and blind spot monitors.
-- **Team Radio Pit-Wall Companion (`GreatSageWidget.tsx`):** Radio-check telemetry companion with pulsating volt antenna and tactical pit-wall counsel.
-- **Staggered Blur-Fade Typography (`HeroHeader.tsx`):** Words (`INTERROGATE`, `YOUR`, `THINKING.`) float in sequentially from a 12px Gaussian blur with cubic-bezier easing.
-- **F1 Tachometer Clarity Gauge (`ClarityGauge.tsx`):** Circular telemetry dial with dynamic delta boosts (`+15% DELTA`) and sector status ratings.
-- **Grand Prix Spec Scenario Cards:** Instant calibration presets across Monaco GP (Startup Leap), Silverstone (Code Rewrite), Monza GP (Pricing Pivot), and Suzuka GP (Career Bet).
+### 4. Cinematic OFF+BRAND Visual System & Fluid Effects
+- **🎨 High-Contrast Obsidian & Volt Palette:** Electric Neon Volt (`#D2FF00`), McLaren Papaya (`#FF8000`), and Carbon Stealth (`#08090C`), inspired by [landonorris.com](https://landonorris.com/) (Awwwards Site of the Day by OFF+BRAND).
+- **🌊 Interactive Fluid Ink Canvas (`FluidCanvas.tsx`):** 60fps HTML5 canvas simulation with 7 soft glowing ink blobs that drift organically with sine oscillations and attract toward the pointer.
+- **📜 Lenis Smooth Scroll:** Integrated Lenis smooth scroll engine creating the signature "flows like a video" camera-pan scrolling experience.
+- **✨ Clip-Path Scroll Reveals (`useScrollReveal.ts`):** Sections and cards dynamically reveal via `clip-path: inset(0 0 100% 0) -> inset(0 0 0% 0)` transitions as the user scrolls.
+- **🔤 Character-by-Character Staggered Typography (`HeroHeader.tsx`):** Words (`INTERROGATE`, `YOUR`, `THINKING.`) float in sequentially with cubic-bezier easing.
+- **⚡ Running Edge-Faded Marquee:** Smooth infinite ticker tape with gradient mask edge fades showcasing core ReasonLens tenets.
+- **✦ AI Thinking Partner Companion (`GreatSageWidget.tsx`):** Floating multi-turn companion providing grounding Socratic challenges.
 
 ---
 

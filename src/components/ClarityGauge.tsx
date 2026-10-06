@@ -34,7 +34,7 @@ export const ClarityGauge: React.FC<Props> = ({
 
   const strokeColor = displayedScore >= 75 ? '#D2FF00' : displayedScore >= 55 ? '#FF8000' : '#F43F5E'
   const strokeOffset = circ - (circ * displayedScore) / 100
-  const verdict = score >= 75 ? 'Full throttle conviction with resilient assumptions.' : score >= 55 ? 'Good foundation, but key assumptions carry tyre wear.' : 'Fragile racing line: critical untested blind spots present.'
+  const verdict = score >= 75 ? 'Strong conviction with resilient assumptions.' : score >= 55 ? 'Good foundation, but key assumptions need validation.' : 'Fragile reasoning: critical untested blind spots present.'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(generateMemoText(analysis, context, rationale))

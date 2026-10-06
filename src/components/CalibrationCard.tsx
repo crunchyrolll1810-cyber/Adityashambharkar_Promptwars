@@ -40,19 +40,19 @@ export const CalibrationCard: React.FC<CalibrationCardProps> = ({
   }
 
   return (
-    <div className="spotlight-card rounded-3xl p-6 sm:p-7 bg-[#12141C]/95 border border-white/10 shadow-2xl space-y-6 mb-8 animate-fade-in hover:border-volt/40 hover:shadow-[0_20px_50px_-10px_rgba(210,255,0,0.15)] transition-all duration-300">
+    <div className="spotlight-card rounded-3xl p-6 sm:p-7 bg-[#12141C]/95 border border-white/10 shadow-2xl space-y-6 mb-8 animate-fade-in hover:border-volt/40 hover:shadow-[0_20px_50px_-10px_rgba(210,255,0,0.12)] transition-all duration-300">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/5 pb-4">
         <div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-volt/10 text-volt text-xs font-bold border border-volt/30 mb-2">
             <Sliders className="h-3.5 w-3.5 text-volt" />
-            <span>Step 1 of 2 • Telemetry Calibration</span>
+            <span>Step 1 of 2 • Context Calibration</span>
           </div>
           <h2 className="text-base sm:text-lg font-black text-white tracking-tight">
             Calibrate Your Real-World Constraints
           </h2>
           <p className="text-xs text-slate-400 mt-1 max-w-xl">
-            Answer 3 quick questions about your situation: <span className="text-volt font-medium italic">"{context || 'your decision'}"</span>. This allows Race Engineer and Gemini to grade your line with surgical precision.
+            Answer 3 quick questions about your situation: <span className="text-volt font-medium italic">"{context || 'your decision'}"</span>. This allows the AI Companion and Gemini to grade your reasoning with precision.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export const CalibrationCard: React.FC<CalibrationCardProps> = ({
           disabled={isLoading}
           className="self-start sm:self-center text-xs text-slate-400 hover:text-volt underline decoration-slate-600 underline-offset-4 active:scale-[0.98] transition font-bold"
         >
-          Skip to Instant Telemetry ➔
+          Skip to Instant Analysis ➔
         </button>
       </div>
 
@@ -117,20 +117,20 @@ export const CalibrationCard: React.FC<CalibrationCardProps> = ({
       {/* Footer Controls */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-white/5">
         <span className="text-[11px] text-slate-400 text-center sm:text-left">
-          ✨ Calibration updates your <span className="text-volt font-bold">Conviction Tachometer</span> and <span className="text-volt font-bold">Race Engineer</span> radio.
+          ✨ Calibration refines your <span className="text-volt font-bold">Clarity Score</span> and <span className="text-volt font-bold">AI Companion</span> guidance.
         </span>
 
         <button
           onClick={handleProceed}
           disabled={isLoading}
-          className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-volt hover:bg-[#E2FF4D] text-black text-xs font-black shadow-lg shadow-volt/20 active:scale-[0.98] transition-all disabled:opacity-50"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-volt hover:bg-lime-300 text-black text-xs font-black shadow-lg shadow-volt/20 active:scale-[0.98] transition-all disabled:opacity-50"
         >
           {isLoading ? (
             <div className="h-4 w-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
           ) : (
             <Sparkles className="h-4 w-4 text-black" />
           )}
-          <span>{isLoading ? 'Calibrating Telemetry...' : 'Generate Calibrated Telemetry ⚡'}</span>
+          <span>{isLoading ? 'Calibrating...' : 'Generate Analysis ⚡'}</span>
           <ArrowRight className="h-3.5 w-3.5 text-black" />
         </button>
       </div>
