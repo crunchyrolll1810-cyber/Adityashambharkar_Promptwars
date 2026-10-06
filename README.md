@@ -71,11 +71,14 @@ To ensure zero monolithic bloat and absolute maintainability, every single file 
 - Separated services into clean single-responsibility modules (`geminiService.ts`, `debateService.ts`, `reEvaluationService.ts`).
 - **Result:** 100% of all 22 source and style files strictly comply with the rule.
 
-### 4. Replicating Antigravity's Signature Visual Identity
-- **Interactive Magnetic Dot Canvas (`InteractiveDotGrid.tsx`):** A custom 60fps HTML5 canvas dot matrix where dots within a 140px radius gently pull toward the cursor with spring dampening physics, mirroring the [antigravity.google](https://antigravity.google) homepage.
+### 4. Lando Norris F1 Telemetry & Antigravity Visual Identity
+- **🏎️ Lando Norris F1 Motorsport Palette:** Electric Neon Volt (`#D2FF00`), McLaren Papaya (`#FF8000`), and Carbon Stealth (`#08090C`), inspired by [landonorris.com](https://landonorris.com/) (Awwwards Site of the Day by OFF+BRAND).
+- **Interactive Magnetic Dot Canvas (`InteractiveDotGrid.tsx`):** A custom 60fps HTML5 canvas dot matrix where dots within a 140px radius gently pull toward the cursor with spring dampening physics and illuminate in electric volt.
+- **F1 Telemetry Marquee Ticker Tape:** Live real-time scrolling telemetry HUD featuring sector splits, tire compound status, and blind spot monitors.
+- **Team Radio Pit-Wall Companion (`GreatSageWidget.tsx`):** Radio-check telemetry companion with pulsating volt antenna and tactical pit-wall counsel.
 - **Staggered Blur-Fade Typography (`HeroHeader.tsx`):** Words (`INTERROGATE`, `YOUR`, `THINKING.`) float in sequentially from a 12px Gaussian blur with cubic-bezier easing.
-- **Dynamic Decision Prompt Carousel:** Real-world dilemmas smoothly fade out and fade in with an ethereal upward translation and a glowing gradient cursor.
-- **Obsidian Glass & Ambient Aurora:** Deep `#090D16` canvas illuminated by multi-layered volumetric glows and scanline CRT overlays.
+- **F1 Tachometer Clarity Gauge (`ClarityGauge.tsx`):** Circular telemetry dial with dynamic delta boosts (`+15% DELTA`) and sector status ratings.
+- **Grand Prix Spec Scenario Cards:** Instant calibration presets across Monaco GP (Startup Leap), Silverstone (Code Rewrite), Monza GP (Pricing Pivot), and Suzuka GP (Career Bet).
 
 ---
 
