@@ -71,8 +71,8 @@ export const InteractiveDotGrid: React.FC = () => {
               y = oy + Math.sin(angle) * pull
               dotRadius = 1.2 + factor * 1.6
 
-              const alpha = 0.25 + factor * 0.65
-              color = factor > 0.5 ? `rgba(167, 139, 250, ${alpha})` : `rgba(96, 165, 250, ${alpha})`
+              const alpha = 0.25 + factor * 0.7
+              color = factor > 0.4 ? `rgba(210, 255, 0, ${alpha})` : `rgba(255, 128, 0, ${alpha * 0.85})`
             }
           }
 

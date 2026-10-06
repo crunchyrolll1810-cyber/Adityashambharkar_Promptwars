@@ -17,22 +17,22 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
 
   return (
     <>
-      {/* Google 4-Color Top Ribbon */}
-      <div className="w-full h-[2.5px] google-ribbon sticky top-0 z-50 shadow-sm" />
+      {/* High-Contrast F1 Racing Ribbon (Volt + Papaya + Cyan) */}
+      <div className="w-full h-[2.5px] bg-gradient-to-r from-volt via-papaya to-blue-500 sticky top-0 z-50 shadow-sm shadow-volt/20" />
 
-      <header className="sticky top-[2.5px] z-40 px-4 sm:px-6 py-3 backdrop-blur-2xl bg-[#090D16]/90 border-b border-violet-500/15 shadow-[0_4px_20px_rgba(139,92,246,0.06)] flex items-center justify-between">
+      <header className="sticky top-[2.5px] z-40 px-4 sm:px-6 py-3 backdrop-blur-2xl bg-[#090D16]/95 border-b border-volt/20 shadow-[0_4px_25px_rgba(210,255,0,0.05)] flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 border border-white/20 group cursor-pointer hover:rotate-12 active:scale-95 transition-all duration-300">
-            <FlaskConical className="h-5 w-5 text-white group-hover:rotate-45 transition-transform duration-300" />
+          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-volt via-papaya to-purple-600 flex items-center justify-center shadow-lg shadow-volt/20 border border-volt/40 group cursor-pointer hover:rotate-6 active:scale-95 transition-all duration-300">
+            <span className="font-mono font-black text-black text-xs tracking-tighter">LN04</span>
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-sans font-extrabold tracking-tight text-white text-base sm:text-lg">ReasonLens</span>
-              <span className="font-mono text-[10px] tracking-wide font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/25">
-                EXP · LABS #01
+              <span className="font-sans font-black tracking-tight text-white text-base sm:text-lg">REASON<span className="text-volt">LENS</span></span>
+              <span className="font-mono text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-full bg-volt/10 text-volt border border-volt/30 shadow-[0_0_12px_rgba(210,255,0,0.2)]">
+                F1 · TELEMETRY
               </span>
             </div>
-            <p className="text-xs text-slate-400 hidden sm:block">Test assumptions and spot blind spots before committing</p>
+            <p className="text-xs text-slate-400 hidden sm:block">Interrogate your racing line & assumptions before committing</p>
           </div>
         </div>
 
@@ -42,22 +42,22 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemoMode, onToggleDemoMode }) 
             aria-label={`Current mode: ${isDemoMode ? 'Demo Mode' : 'Live Gemini'}. Click to toggle mode.`}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-xl font-mono text-xs font-semibold border active:scale-[0.97] transition-all duration-150 ${
               isDemoMode
-                ? 'bg-amber-500/10 text-amber-300 border-amber-500/30 hover:bg-amber-500/20'
-                : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30 hover:bg-emerald-500/20 shadow-sm shadow-emerald-500/10'
+                ? 'bg-amber-500/10 text-amber-300 border-amber-500/40 hover:bg-amber-500/20 shadow-sm'
+                : 'bg-volt/10 text-volt border-volt/40 hover:bg-volt/20 shadow-[0_0_15px_rgba(210,255,0,0.2)]'
             }`}
             title="Toggle between Live API and offline demo scenarios"
           >
             <span className="relative flex h-2 w-2">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isDemoMode ? 'bg-amber-400' : 'bg-emerald-400'}`}></span>
-              <span className={`relative inline-flex rounded-full h-2 w-2 ${isDemoMode ? 'bg-amber-500' : 'bg-emerald-500'}`}></span>
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isDemoMode ? 'bg-amber-400' : 'bg-volt'}`}></span>
+              <span className={`relative inline-flex rounded-full h-2 w-2 ${isDemoMode ? 'bg-amber-500' : 'bg-volt'}`}></span>
             </span>
-            <span>{isDemoMode ? '[SYS: DEMO ● READY]' : '[SYS: GEMINI ● LIVE]'}</span>
+            <span>{isDemoMode ? '[PIT: DEMO ● READY]' : '[TRACK: GEMINI ● LIVE]'}</span>
           </button>
 
           <button
             onClick={() => setShowKeyModal(true)}
             aria-label="Configure Gemini API Key"
-            className="p-2 rounded-xl bg-slate-900/90 border border-white/10 text-slate-400 hover:text-white hover:border-violet-500/40 active:scale-[0.97] transition-all duration-150"
+            className="p-2 rounded-xl bg-slate-900/90 border border-volt/25 text-slate-300 hover:text-volt hover:border-volt/60 active:scale-[0.97] transition-all duration-150 shadow-sm"
             title="Configure Gemini API Key"
           >
             <Key className="h-4 w-4" />

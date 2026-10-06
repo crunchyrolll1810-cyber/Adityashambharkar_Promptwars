@@ -50,11 +50,11 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
         e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
         e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
       }}
-      className="spotlight-card backdrop-blur-2xl bg-[#161922]/85 rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl space-y-5 focus-within:border-indigo-500/50 transition-all"
+      className="spotlight-card backdrop-blur-2xl bg-[#0D0E14]/95 rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl space-y-5 focus-within:border-volt/50 transition-all"
     >
       {imagePreview && (
         <div className="relative inline-block">
-          <img src={imagePreview} alt="Uploaded Decision Context Preview" className="h-20 w-20 object-cover rounded-2xl border border-indigo-500/30 shadow-md" />
+          <img src={imagePreview} alt="Uploaded Decision Context Preview" className="h-20 w-20 object-cover rounded-2xl border border-volt/40 shadow-md" />
           <button
             type="button"
             aria-label="Remove uploaded image"
@@ -68,7 +68,7 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
       {fileError && <p role="alert" className="text-xs text-rose-400 font-semibold">{fileError}</p>}
 
       <div className="space-y-2">
-        <label htmlFor="decision-context" className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
+        <label htmlFor="decision-context" className="block text-xs font-black uppercase tracking-wider text-slate-200 accent-bar-volt">
           What decision are you thinking through?
         </label>
         <textarea
@@ -80,12 +80,12 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
           onKeyDown={handleKeyDown}
           placeholder="e.g., Thinking of quitting my job to build an AI startup full-time..."
           rows={3}
-          className="w-full bg-[#0B0E14]/90 rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/5 focus:border-violet-500/60 focus:shadow-[0_0_0_2px_rgba(139,92,246,0.4)] focus:outline-none resize-none leading-relaxed transition"
+          className="w-full bg-[#12141C] rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/10 focus:border-volt focus:shadow-[0_0_0_2px_rgba(210,255,0,0.35)] focus:outline-none resize-none leading-relaxed transition"
         />
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="decision-rationale" className="block text-xs font-bold uppercase tracking-wider text-violet-300 accent-bar-violet">
+        <label htmlFor="decision-rationale" className="block text-xs font-black uppercase tracking-wider text-slate-200 accent-bar-volt">
           Why do you feel this is the right move?
         </label>
         <textarea
@@ -97,7 +97,7 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
           onKeyDown={handleKeyDown}
           placeholder="e.g., I have 6 months of runway, strong technical skills, and early user interest..."
           rows={3}
-          className="w-full bg-[#0B0E14]/90 rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/5 focus:border-violet-500/60 focus:shadow-[0_0_0_2px_rgba(139,92,246,0.4)] focus:outline-none resize-none leading-relaxed transition"
+          className="w-full bg-[#12141C] rounded-2xl px-4 py-3 text-slate-100 placeholder-slate-500 text-sm border border-white/10 focus:border-volt focus:shadow-[0_0_0_2px_rgba(210,255,0,0.35)] focus:outline-none resize-none leading-relaxed transition"
         />
       </div>
 
@@ -108,9 +108,9 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
             type="button"
             aria-label="Add screenshot or sketch diagram"
             onClick={() => fileInputRef.current?.click()}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs text-slate-300 hover:text-white hover:bg-white/5 border border-white/10 active:scale-[0.97] transition-all"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs text-slate-300 hover:text-volt hover:bg-white/5 border border-white/10 active:scale-[0.97] transition-all"
           >
-            <ImageIcon className="h-4 w-4 text-violet-400" />
+            <ImageIcon className="h-4 w-4 text-volt" />
             <span>Add screenshot or sketch</span>
           </button>
           <span className="font-mono text-[11px] text-slate-500 hidden sm:inline">[CTRL+ENTER]</span>
@@ -121,12 +121,12 @@ export const MultimodalInput: React.FC<MultimodalInputProps> = ({
           aria-label={isLoading ? 'Exploring with Gemini...' : 'Explore My Assumptions ✨'}
           aria-busy={isLoading}
           disabled={isLoading || (!context.trim() && !rationale.trim())}
-          className={`relative flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-indigo-500/25 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97] transition-all group ${isLoading ? 'ring-2 ring-violet-500/80 ring-offset-2 ring-offset-[#090D16] animate-pulse' : ''}`}
+          className={`relative flex items-center gap-2 px-6 py-2.5 rounded-xl bg-volt hover:bg-[#E2FF4D] text-black text-xs font-black tracking-wide shadow-lg shadow-volt/20 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97] transition-all group ${isLoading ? 'ring-2 ring-volt ring-offset-2 ring-offset-[#090D16] animate-pulse' : ''}`}
         >
           {isLoading ? (
-            <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <div className="h-4 w-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
           ) : (
-            <Send className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <Send className="h-4 w-4 text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           )}
           <span>{isLoading ? 'Exploring with Gemini...' : 'Explore My Assumptions ✨'}</span>
         </button>

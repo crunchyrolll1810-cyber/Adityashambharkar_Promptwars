@@ -13,6 +13,9 @@ export default {
         amber: { DEFAULT: '#F59E0B', 400: '#FBBF24', 500: '#F59E0B' },
         cyan: { DEFAULT: '#06B6D4', 400: '#22D3EE', 500: '#06B6D4' },
         violet: { DEFAULT: '#8B5CF6', 400: '#A78BFA', 500: '#8B5CF6', 600: '#7C3AED' },
+        volt: { DEFAULT: '#D2FF00', 400: '#E2FF4D', 500: '#D2FF00', 600: '#B5DC00' },
+        papaya: { DEFAULT: '#FF8000', 400: '#FFA233', 500: '#FF8000', 600: '#E67300' },
+        carbon: { 950: '#08090C', 900: '#0D0E12', 800: '#121318', 700: '#181A22' },
         brand: {
           50: '#f5f3ff',
           100: '#ede9fe',
@@ -31,8 +34,13 @@ export default {
         'radial-pulse': 'radialPulse 4s ease-in-out infinite',
         'slide-up-fade': 'slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'blur-fade': 'blurFadeIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'marquee': 'marquee 28s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         blurFadeIn: {
           '0%': { opacity: '0', filter: 'blur(12px)', transform: 'translateY(16px)' },
           '100%': { opacity: '1', filter: 'blur(0px)', transform: 'translateY(0)' },
@@ -50,8 +58,8 @@ export default {
           '100%': { transform: 'translateX(100%)' },
         },
         borderGlow: {
-          '0%': { borderColor: 'rgba(139, 92, 246, 0.2)', boxShadow: '0 0 15px rgba(139, 92, 246, 0.1)' },
-          '100%': { borderColor: 'rgba(139, 92, 246, 0.6)', boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' },
+          '0%': { borderColor: 'rgba(210, 255, 0, 0.2)', boxShadow: '0 0 15px rgba(210, 255, 0, 0.1)' },
+          '100%': { borderColor: 'rgba(210, 255, 0, 0.6)', boxShadow: '0 0 30px rgba(210, 255, 0, 0.3)' },
         },
         waveform: {
           '0%': { height: '20%' },
